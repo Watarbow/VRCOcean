@@ -1,0 +1,1196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7afd11a42d14b72b998b0778cf2c3e6, type: 3}
+  m_Name: ShipSpeed
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: b17d4e809531d2d449c6f05cb6471327, type: 2}
+  udonAssembly: ".data_start\n    slider: %UnityEngineUISlider, null\n    .export
+    slider\n    label: %UnityEngineUIText, null\n    .export label\n    acceleration:
+    %SystemSingle, 0.3\n    .export acceleration\n    initialSpeed: %SystemSingle,
+    15\n    .export initialSpeed\n    rampStartTime: %SystemDouble, 0\n    .export
+    rampStartTime\n    .sync rampStartTime, none\n    rampStartDistance: %SystemDouble,
+    0\n    .export rampStartDistance\n    .sync rampStartDistance, none\n    rampFrom:
+    %SystemSingle, 0\n    .export rampFrom\n    .sync rampFrom, none\n    rampTo:
+    %SystemSingle, 0\n    .export rampTo\n    .sync rampTo, none\n    started: %SystemBoolean,
+    null\n    shown: %SystemSingle, -1\n    __refl_typeid: %SystemInt64, null\n   
+    __refl_typeids: %SystemInt64Array, null\n    __Start_retjump: %SystemUInt32,
+    0xFFFFFFFC\n    __SpeedAt__SystemDouble_p_0: %SystemDouble, 0\n    __SpeedAt__SystemDouble_ret:
+    %SystemSingle, 0\n    .export __SpeedAt__SystemDouble_ret\n    __SpeedAt__SystemDouble_retjump:
+    %SystemUInt32, 0xFFFFFFFC\n    __DistanceAt__SystemDouble_p_0: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble___inl_t0: %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl_t1:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl0__from: %SystemSingle,
+    0\n    __DistanceAt__SystemDouble___inl0__to: %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__accel:
+    %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__tau: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble___inl0__dv: %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__a:
+    %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__ramp: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble___inl0__r: %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl0____t0:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl0__d: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble___inl0____t1: %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0____t2:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_ret: %SystemDouble, 0\n    .export
+    __DistanceAt__SystemDouble_ret\n    __DistanceAt__SystemDouble_retjump: %SystemUInt32,
+    0xFFFFFFFC\n    __OnSliderChanged_v: %SystemSingle, 0\n    __OnSliderChanged_retjump:
+    %SystemUInt32, 0xFFFFFFFC\n    __SetTarget__SystemSingle_SystemDouble_p_0: %SystemSingle,
+    0\n    __SetTarget__SystemSingle_SystemDouble_p_1: %SystemDouble, 0\n    __SetTarget__SystemSingle_SystemDouble_d:
+    %SystemDouble, 0\n    __SetTarget__SystemSingle_SystemDouble_s: %SystemSingle,
+    0\n    __SetTarget__SystemSingle_SystemDouble_retjump: %SystemUInt32, 0xFFFFFFFC\n   
+    __OnDeserialization_retjump: %SystemUInt32, 0xFFFFFFFC\n    __Update___t0: %SystemBoolean,
+    null\n    __Update_retjump: %SystemUInt32, 0xFFFFFFFC\n    __Show_now: %SystemSingle,
+    0\n    __Show___t0: %SystemSingle, 0\n    __Show_s: %SystemString, null\n   
+    __Show___t1: %SystemString, null\n    __Show___t2: %UnityEngineUIText, null\n   
+    __Show_retjump: %SystemUInt32, 0xFFFFFFFC\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3:
+    %SystemDouble, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ramp:
+    %SystemDouble, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump:
+    %SystemUInt32, 0xFFFFFFFC\n    __returnValue: %SystemObject, null\n    __retaddr_end:
+    %SystemUInt32, 0xFFFFFFFC\n    __const_0: %SystemBoolean, null\n    __retaddr_0:
+    %SystemUInt32, 0x00000070\n    __SpeedAt__SystemDouble_intnl_0: %SystemDouble,
+    0\n    __retaddr_1: %SystemUInt32, 0x00000118\n    __SpeedAt__SystemDouble_intnl_1:
+    %SystemSingle, 0\n    __const_1: %SystemDouble, 0\n    __const_2: %SystemSingle,
+    0\n    __DistanceAt__SystemDouble_intnl_0: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_1:
+    %SystemSingle, 0\n    __const_3: %SystemSingle, 0.001\n    __DistanceAt__SystemDouble_intnl_2:
+    %SystemSingle, 0\n    __DistanceAt__SystemDouble_intnl_3: %SystemSingle, 0\n   
+    __DistanceAt__SystemDouble_intnl_4: %SystemSingle, 0\n    __DistanceAt__SystemDouble_intnl_5:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_6: %SystemBoolean, null\n   
+    __DistanceAt__SystemDouble_intnl_7: %SystemBoolean, null\n    __DistanceAt__SystemDouble_intnl_8:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_10: %SystemBoolean, null\n   
+    __const_4: %SystemDouble, 0.5\n    __DistanceAt__SystemDouble_intnl_12: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble_intnl_13: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_14:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_15: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble_intnl_16: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_17:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_18: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble_intnl_19: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_20:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_21: %SystemDouble, 0\n   
+    __const_5: %UnityEngineObject, null\n    __OnSliderChanged_intnl_0: %SystemBoolean,
+    null\n    __OnSliderChanged_intnl_1: %SystemSingle, 0\n    __OnSliderChanged_intnl_2:
+    %SystemSingle, 0\n    __OnSliderChanged_intnl_3: %SystemSingle, 0\n    __const_6:
+    %SystemSingle, 0.01\n    __OnSliderChanged_intnl_4: %SystemBoolean, null\n   
+    __OnSliderChanged_intnl_5: %SystemDouble, 0\n    __retaddr_2: %SystemUInt32,
+    0x000006E8\n    __const_7: %UnityEngineGameObject, this\n    __SetTarget__SystemSingle_SystemDouble_intnl_0:
+    %SystemBoolean, null\n    __SetTarget__SystemSingle_SystemDouble_intnl_1: %VRCSDKBaseVRCPlayerApi,
+    null\n    __retaddr_3: %SystemUInt32, 0x000007A0\n    __SetTarget__SystemSingle_SystemDouble_intnl_2:
+    %SystemDouble, 0\n    __retaddr_4: %SystemUInt32, 0x000007E4\n    __SetTarget__SystemSingle_SystemDouble_intnl_3:
+    %SystemSingle, 0\n    __const_8: %VRCUdonUdonBehaviour, this\n    __retaddr_5:
+    %SystemUInt32, 0x00000874\n    __retaddr_6: %SystemUInt32, 0x000008AC\n    __const_9:
+    %SystemBoolean, null\n    __Update_intnl_0: %SystemBoolean, null\n    __retaddr_7:
+    %SystemUInt32, 0x0000092C\n    __Update_intnl_2: %SystemSingle, 0\n    __retaddr_8:
+    %SystemUInt32, 0x00000978\n    __const_10: %SystemString, null\n    __const_11:
+    %UnityEngineUIText, null\n    __retaddr_9: %SystemUInt32, 0x000009E8\n    __Show_intnl_1:
+    %SystemSingle, 0\n    __Show_intnl_2: %SystemBoolean, null\n    __const_12: %SystemSingle,
+    -1\n    __Show_intnl_3: %SystemBoolean, null\n    __Show_intnl_4: %SystemBoolean,
+    null\n    __const_13: %SystemString, \"Ship speed  \"\n    __const_14: %SystemString,
+    \"F1\"\n    __Show_intnl_5: %SystemString, null\n    __Show_intnl_6: %SystemString,
+    null\n    __const_15: %SystemString, \" m/s  (\"\n    __Show_intnl_7: %SystemString,
+    null\n    __const_16: %SystemSingle, 1.943844\n    __Show_intnl_8: %SystemSingle,
+    0\n    __const_17: %SystemString, \"F0\"\n    __Show_intnl_9: %SystemString,
+    null\n    __Show_intnl_10: %SystemString, null\n    __const_18: %SystemString,
+    \" kn)\"\n    __Show_intnl_12: %SystemBoolean, null\n    __const_19: %SystemString,
+    \"  -> \"\n    __Show_intnl_13: %SystemString, null\n    __Show_intnl_14: %SystemString,
+    null\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_1:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_2:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_3:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_4:
+    %SystemDouble, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_5:
+    %SystemBoolean, null\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_6:
+    %SystemBoolean, null\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_7:
+    %SystemBoolean, null\n    __const_20: %SystemSingle, 1\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_8:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_9:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_10:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_11:
+    %SystemSingle, 0\n.data_end\n.code_start\n    .export _start\n    _start:\n       
+    PUSH, started\n        JUMP_IF_FALSE, __Start_L0\n        JUMP, __Start_L1\n   
+    __Start_L0:\n        PUSH, initialSpeed\n        PUSH, rampFrom\n        COPY\n       
+    PUSH, initialSpeed\n        PUSH, rampTo\n        COPY\n    __Start_L1:\n       
+    PUSH, __const_0\n        PUSH, started\n        COPY\n        PUSH, __retaddr_0\n       
+    PUSH, __Show_retjump\n        COPY\n        JUMP, Show\n        JUMP_INDIRECT,
+    __Start_retjump\n    .export SpeedAt__SystemDouble\n    SpeedAt__SystemDouble:\n       
+    PUSH, __retaddr_end\n        PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n   
+    __SpeedAt__SystemDouble_body:\n        PUSH, __SpeedAt__SystemDouble_p_0\n       
+    PUSH, rampStartTime\n        PUSH, __SpeedAt__SystemDouble_intnl_0\n        EXTERN,
+    \"SystemDouble.__op_Subtraction__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, rampFrom\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    COPY\n        PUSH, rampTo\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1\n       
+    COPY\n        PUSH, acceleration\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2\n       
+    COPY\n        PUSH, __SpeedAt__SystemDouble_intnl_0\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    COPY\n        PUSH, __retaddr_1\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n       
+    COPY\n        JUMP, SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    PUSH, __SpeedAt__SystemDouble_ret\n        COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    PUSH, __returnValue\n        COPY\n        JUMP_INDIRECT, __SpeedAt__SystemDouble_retjump\n       
+    JUMP_INDIRECT, __SpeedAt__SystemDouble_retjump\n    .export DistanceAt__SystemDouble\n   
+    DistanceAt__SystemDouble:\n        PUSH, __retaddr_end\n        PUSH, __DistanceAt__SystemDouble_retjump\n       
+    COPY\n    __DistanceAt__SystemDouble_body:\n        PUSH, __const_1\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__r\n        COPY\n        PUSH, __const_1\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t0\n        COPY\n        PUSH, __const_2\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t1\n        COPY\n        PUSH, __const_1\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t2\n        COPY\n        PUSH, rampStartDistance\n       
+    PUSH, __DistanceAt__SystemDouble___inl_t0\n        COPY\n        PUSH, rampFrom\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__from\n        COPY\n        PUSH, rampTo\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__to\n        COPY\n        PUSH, __DistanceAt__SystemDouble_p_0\n       
+    PUSH, rampStartTime\n        PUSH, __DistanceAt__SystemDouble_intnl_0\n       
+    EXTERN, \"SystemDouble.__op_Subtraction__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_0\n        PUSH, __DistanceAt__SystemDouble___inl0__tau\n       
+    COPY\n        PUSH, rampTo\n        PUSH, rampFrom\n        PUSH, __DistanceAt__SystemDouble_intnl_1\n       
+    EXTERN, \"SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_1\n        PUSH, __DistanceAt__SystemDouble___inl0__dv\n       
+    COPY\n        PUSH, acceleration\n        PUSH, __const_3\n        PUSH, __DistanceAt__SystemDouble_intnl_2\n       
+    EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_2\n        PUSH, __DistanceAt__SystemDouble___inl0__a\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble_intnl_1\n        PUSH, __DistanceAt__SystemDouble_intnl_3\n       
+    EXTERN, \"UnityEngineMathf.__Abs__SystemSingle__SystemSingle\"\n        PUSH,
+    __DistanceAt__SystemDouble_intnl_3\n        PUSH, __DistanceAt__SystemDouble_intnl_2\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_4\n        EXTERN, \"SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_4\n        PUSH, __DistanceAt__SystemDouble_intnl_5\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __DistanceAt__SystemDouble_intnl_5\n        PUSH, __DistanceAt__SystemDouble___inl0__ramp\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble_intnl_0\n        PUSH, __DistanceAt__SystemDouble_intnl_5\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_6\n        EXTERN, \"SystemDouble.__op_LessThan__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_6\n        JUMP_IF_FALSE, __DistanceAt__SystemDouble_L0\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__tau\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    COPY\n        JUMP, __DistanceAt__SystemDouble_L1\n    __DistanceAt__SystemDouble_L0:\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__ramp\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    COPY\n    __DistanceAt__SystemDouble_L1:\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__r\n        COPY\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble_intnl_7\n        EXTERN,
+    \"SystemDouble.__op_LessThan__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_7\n        JUMP_IF_FALSE, __DistanceAt__SystemDouble_L3\n       
+    PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    COPY\n    __DistanceAt__SystemDouble_L3:\n        PUSH, __DistanceAt__SystemDouble___inl0__from\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_8\n        EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_8\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t2\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__dv\n        PUSH, __const_2\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_10\n        EXTERN, \"SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_10\n        JUMP_IF_FALSE, __DistanceAt__SystemDouble_L4\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__a\n        PUSH, __DistanceAt__SystemDouble___inl0____t1\n       
+    COPY\n        JUMP, __DistanceAt__SystemDouble_L5\n    __DistanceAt__SystemDouble_L4:\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__a\n        PUSH, __DistanceAt__SystemDouble___inl0____t1\n       
+    EXTERN, \"SystemSingle.__op_UnaryMinus__SystemSingle__SystemSingle\"\n    __DistanceAt__SystemDouble_L5:\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t1\n        PUSH, __DistanceAt__SystemDouble_intnl_12\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __const_4\n        PUSH, __DistanceAt__SystemDouble_intnl_12\n        PUSH, __DistanceAt__SystemDouble_intnl_13\n       
+    EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_13\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_14\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_14\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_15\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t2\n        PUSH, __DistanceAt__SystemDouble_intnl_15\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_16\n        EXTERN, \"SystemDouble.__op_Addition__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__to\n        PUSH, __DistanceAt__SystemDouble_intnl_17\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __DistanceAt__SystemDouble___inl0__tau\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_18\n        EXTERN, \"SystemDouble.__op_Subtraction__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_17\n        PUSH, __DistanceAt__SystemDouble_intnl_18\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_19\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_16\n        PUSH, __DistanceAt__SystemDouble_intnl_19\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_20\n        EXTERN, \"SystemDouble.__op_Addition__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl_t0\n        PUSH, __DistanceAt__SystemDouble_intnl_20\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_21\n        EXTERN, \"SystemDouble.__op_Addition__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_21\n        PUSH, __DistanceAt__SystemDouble_ret\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble_intnl_21\n        PUSH, __returnValue\n       
+    COPY\n        JUMP_INDIRECT, __DistanceAt__SystemDouble_retjump\n        JUMP_INDIRECT,
+    __DistanceAt__SystemDouble_retjump\n    .export OnSliderChanged\n    OnSliderChanged:\n       
+    PUSH, __const_2\n        PUSH, __OnSliderChanged_v\n        COPY\n        PUSH,
+    slider\n        PUSH, __const_5\n        PUSH, __OnSliderChanged_intnl_0\n       
+    EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\n       
+    PUSH, __OnSliderChanged_intnl_0\n        JUMP_IF_FALSE, __OnSliderChanged_L1\n       
+    JUMP_INDIRECT, __OnSliderChanged_retjump\n    __OnSliderChanged_L1:\n       
+    PUSH, slider\n        PUSH, __OnSliderChanged_intnl_1\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\n       
+    PUSH, __OnSliderChanged_intnl_1\n        PUSH, __OnSliderChanged_v\n        COPY\n       
+    PUSH, __OnSliderChanged_intnl_1\n        PUSH, rampTo\n        PUSH, __OnSliderChanged_intnl_2\n       
+    EXTERN, \"SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __OnSliderChanged_intnl_2\n        PUSH, __OnSliderChanged_intnl_3\n       
+    EXTERN, \"UnityEngineMathf.__Abs__SystemSingle__SystemSingle\"\n        PUSH,
+    __OnSliderChanged_intnl_3\n        PUSH, __const_6\n        PUSH, __OnSliderChanged_intnl_4\n       
+    EXTERN, \"SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __OnSliderChanged_intnl_4\n        JUMP_IF_FALSE, __OnSliderChanged_L3\n       
+    JUMP_INDIRECT, __OnSliderChanged_retjump\n    __OnSliderChanged_L3:\n       
+    PUSH, __OnSliderChanged_intnl_5\n        EXTERN, \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\n       
+    PUSH, __OnSliderChanged_v\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_0\n       
+    COPY\n        PUSH, __OnSliderChanged_intnl_5\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n       
+    COPY\n        PUSH, __retaddr_2\n        PUSH, __SetTarget__SystemSingle_SystemDouble_retjump\n       
+    COPY\n        JUMP, __SetTarget__SystemSingle_SystemDouble_body\n        JUMP_INDIRECT,
+    __OnSliderChanged_retjump\n    .export SetTarget__SystemSingle_SystemDouble\n   
+    SetTarget__SystemSingle_SystemDouble:\n        PUSH, __retaddr_end\n        PUSH,
+    __SetTarget__SystemSingle_SystemDouble_retjump\n        COPY\n    __SetTarget__SystemSingle_SystemDouble_body:\n       
+    PUSH, __const_1\n        PUSH, __SetTarget__SystemSingle_SystemDouble_d\n       
+    COPY\n        PUSH, __const_7\n        PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_0\n       
+    EXTERN, \"VRCSDKBaseNetworking.__IsOwner__UnityEngineGameObject__SystemBoolean\"\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_0\n        JUMP_IF_FALSE,
+    __SetTarget__SystemSingle_SystemDouble_L0\n        JUMP, __SetTarget__SystemSingle_SystemDouble_L1\n   
+    __SetTarget__SystemSingle_SystemDouble_L0:\n        PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_1\n       
+    EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_1\n        PUSH, __const_7\n       
+    EXTERN, \"VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid\"\n   
+    __SetTarget__SystemSingle_SystemDouble_L1:\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n       
+    PUSH, __DistanceAt__SystemDouble_p_0\n        COPY\n        PUSH, __retaddr_3\n       
+    PUSH, __DistanceAt__SystemDouble_retjump\n        COPY\n        JUMP, __DistanceAt__SystemDouble_body\n       
+    PUSH, __DistanceAt__SystemDouble_ret\n        PUSH, __SetTarget__SystemSingle_SystemDouble_d\n       
+    COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n        PUSH,
+    __SpeedAt__SystemDouble_p_0\n        COPY\n        PUSH, __retaddr_4\n       
+    PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n        JUMP, __SpeedAt__SystemDouble_body\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n        PUSH, rampStartTime\n       
+    COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_d\n        PUSH, rampStartDistance\n       
+    COPY\n        PUSH, __SpeedAt__SystemDouble_ret\n        PUSH, rampFrom\n       
+    COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_0\n        PUSH,
+    rampTo\n        COPY\n        PUSH, __const_0\n        PUSH, started\n       
+    COPY\n        PUSH, __const_8\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\n       
+    PUSH, __retaddr_5\n        PUSH, __Show_retjump\n        COPY\n        JUMP,
+    Show\n        JUMP_INDIRECT, __SetTarget__SystemSingle_SystemDouble_retjump\n   
+    .export _onDeserialization\n    _onDeserialization:\n        PUSH, __const_0\n       
+    PUSH, started\n        COPY\n        PUSH, __retaddr_6\n        PUSH, __Show_retjump\n       
+    COPY\n        JUMP, Show\n        JUMP_INDIRECT, __OnDeserialization_retjump\n   
+    .export _update\n    _update:\n        PUSH, shown\n        PUSH, rampTo\n       
+    PUSH, __Update_intnl_0\n        EXTERN, \"SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Update_intnl_0\n        PUSH, __Update___t0\n        COPY\n        PUSH,
+    __Update_intnl_0\n        JUMP_IF_FALSE, __Update_L0\n        JUMP, __Update_L1\n   
+    __Update_L0:\n        PUSH, __SpeedAt__SystemDouble_p_0\n        EXTERN, \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\n       
+    PUSH, __retaddr_7\n        PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n       
+    JUMP, __SpeedAt__SystemDouble_body\n        PUSH, __SpeedAt__SystemDouble_ret\n       
+    PUSH, rampTo\n        PUSH, __Update___t0\n        EXTERN, \"SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean\"\n   
+    __Update_L1:\n        PUSH, __Update___t0\n        JUMP_IF_FALSE, __Update_L3\n       
+    PUSH, __retaddr_8\n        PUSH, __Show_retjump\n        COPY\n        JUMP,
+    Show\n    __Update_L3:\n        JUMP_INDIRECT, __Update_retjump\n    Show:\n       
+    PUSH, __const_2\n        PUSH, __Show_now\n        COPY\n        PUSH, __const_2\n       
+    PUSH, __Show___t0\n        COPY\n        PUSH, __const_10\n        PUSH, __Show_s\n       
+    COPY\n        PUSH, __SpeedAt__SystemDouble_p_0\n        EXTERN, \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\n       
+    PUSH, __retaddr_9\n        PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n       
+    JUMP, __SpeedAt__SystemDouble_body\n        PUSH, __SpeedAt__SystemDouble_ret\n       
+    PUSH, __Show_now\n        COPY\n        PUSH, __SpeedAt__SystemDouble_ret\n       
+    PUSH, rampTo\n        PUSH, __Show_intnl_2\n        EXTERN, \"SystemSingle.__op_Equality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Show_intnl_2\n        JUMP_IF_FALSE, __Show_L0\n        PUSH, rampTo\n       
+    PUSH, __Show___t0\n        COPY\n        JUMP, __Show_L1\n    __Show_L0:\n       
+    PUSH, __const_12\n        PUSH, __Show___t0\n        COPY\n    __Show_L1:\n       
+    PUSH, __Show___t0\n        PUSH, shown\n        COPY\n        PUSH, slider\n       
+    PUSH, __const_5\n        PUSH, __Show_intnl_3\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\n       
+    PUSH, __Show_intnl_3\n        JUMP_IF_FALSE, __Show_L3\n        PUSH, slider\n       
+    PUSH, rampTo\n        EXTERN, \"UnityEngineUISlider.__SetValueWithoutNotify__SystemSingle__SystemVoid\"\n   
+    __Show_L3:\n        PUSH, label\n        PUSH, __const_5\n        PUSH, __Show_intnl_4\n       
+    EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\n       
+    PUSH, __Show_intnl_4\n        JUMP_IF_FALSE, __Show_L5\n        JUMP_INDIRECT,
+    __Show_retjump\n    __Show_L5:\n        PUSH, __Show_now\n        PUSH, __const_14\n       
+    PUSH, __Show_intnl_5\n        EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\n       
+    PUSH, __const_13\n        PUSH, __Show_intnl_5\n        PUSH, __Show_intnl_6\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_intnl_6\n        PUSH, __const_15\n        PUSH, __Show_intnl_7\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_now\n        PUSH, __const_16\n        PUSH, __Show_intnl_8\n       
+    EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __Show_intnl_8\n        PUSH, __const_17\n        PUSH, __Show_intnl_9\n       
+    EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\n        PUSH,
+    __Show_intnl_7\n        PUSH, __Show_intnl_9\n        PUSH, __Show_intnl_10\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_intnl_10\n        PUSH, __const_18\n        PUSH, __Show_s\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_now\n        PUSH, rampTo\n        PUSH, __Show_intnl_12\n       
+    EXTERN, \"SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Show_intnl_12\n        JUMP_IF_FALSE, __Show_L7\n        PUSH, rampTo\n       
+    PUSH, __const_14\n        PUSH, __Show_intnl_13\n        EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\n       
+    PUSH, __const_19\n        PUSH, __Show_intnl_13\n        PUSH, __Show_intnl_14\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_s\n        PUSH, __Show_intnl_14\n        PUSH, __Show_s\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n   
+    __Show_L7:\n        PUSH, label\n        PUSH, __Show_s\n        EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\n       
+    JUMP_INDIRECT, __Show_retjump\n    SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble:\n       
+    PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    COPY\n        PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0\n       
+    EXTERN, \"SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_1\n       
+    EXTERN, \"UnityEngineMathf.__Abs__SystemSingle__SystemSingle\"\n        PUSH,
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2\n       
+    PUSH, __const_3\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_2\n       
+    EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_2\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_3\n       
+    EXTERN, \"SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_4\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_4\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_5\n       
+    EXTERN, \"SystemDouble.__op_GreaterThanOrEqual__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_5\n       
+    JUMP_IF_FALSE, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    COPY\n        JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n   
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L1:\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    PUSH, __const_1\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_6\n       
+    EXTERN, \"SystemDouble.__op_LessThanOrEqual__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_6\n       
+    JUMP_IF_FALSE, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    COPY\n        JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n   
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L3:\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv\n       
+    PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_7\n       
+    EXTERN, \"SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_7\n       
+    JUMP_IF_FALSE, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L4\n       
+    PUSH, __const_20\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    COPY\n        JUMP, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L5\n   
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L4:\n       
+    PUSH, __const_12\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    COPY\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L5:\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2\n       
+    PUSH, __const_3\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_8\n       
+    EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_8\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_9\n       
+    EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_10\n       
+    EXTERN, \"SystemConvert.__ToSingle__SystemDouble__SystemSingle\"\n        PUSH,
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_9\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_10\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_11\n       
+    EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_11\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    EXTERN, \"SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle\"\n       
+    JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n       
+    JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n.code_end\n"
+  assemblyError: 
+  sourceCsScript: {fileID: 11500000, guid: 30ebbff422addda478e6f803040eab17, type: 3}
+  unresolvedCompileErrors: []
+  sourceFingerprint: 682a99f4e1148cc7aec4f6fa19999abe29107959710bc191d67e68654e96708a
+  compilerVersion: 0.9.0|24726ea48fc9412588b505379fe283b4+3fe9e9b1b702489093f17d3f744c6ad7.baa02b404c01455c88bdc347040ce690.9577306f65b64efdb414a6d337a03d88.9cced14deb724dbea02356c168098f20
+  generatedGpuAssets: []
+  gpuLoadSourceFields: []
+  generatedGpuMaterials: []
+  declaredBehaviourSyncMode: 4
+  fieldLabels: []
+  inspectorFields:
+  - slider
+  - label
+  - acceleration
+  - initialSpeed
+  - rampStartTime
+  - rampStartDistance
+  - rampFrom
+  - rampTo
+  inspectorPaths:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  optBeforeUasm: ".data_start\n    slider: %UnityEngineUISlider, null\n    .export
+    slider\n    label: %UnityEngineUIText, null\n    .export label\n    acceleration:
+    %SystemSingle, 0.3\n    .export acceleration\n    initialSpeed: %SystemSingle,
+    15\n    .export initialSpeed\n    rampStartTime: %SystemDouble, 0\n    .export
+    rampStartTime\n    .sync rampStartTime, none\n    rampStartDistance: %SystemDouble,
+    0\n    .export rampStartDistance\n    .sync rampStartDistance, none\n    rampFrom:
+    %SystemSingle, 0\n    .export rampFrom\n    .sync rampFrom, none\n    rampTo:
+    %SystemSingle, 0\n    .export rampTo\n    .sync rampTo, none\n    started: %SystemBoolean,
+    null\n    shown: %SystemSingle, -1\n    __refl_typeid: %SystemInt64, null\n   
+    __refl_typeids: %SystemInt64Array, null\n    __Start_retjump: %SystemUInt32,
+    0xFFFFFFFC\n    __SpeedAt__SystemDouble_p_0: %SystemDouble, 0\n    __SpeedAt__SystemDouble_ret:
+    %SystemSingle, 0\n    .export __SpeedAt__SystemDouble_ret\n    __SpeedAt__SystemDouble_retjump:
+    %SystemUInt32, 0xFFFFFFFC\n    __DistanceAt__SystemDouble_p_0: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble___inl_t0: %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl_t1:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl0__from: %SystemSingle,
+    0\n    __DistanceAt__SystemDouble___inl0__to: %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__accel:
+    %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__tau: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble___inl0__dv: %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__a:
+    %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__ramp: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble___inl0__r: %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl0____t0:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl0__d: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble___inl0____t1: %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0____t2:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_ret: %SystemDouble, 0\n    .export
+    __DistanceAt__SystemDouble_ret\n    __DistanceAt__SystemDouble_retjump: %SystemUInt32,
+    0xFFFFFFFC\n    __OnSliderChanged_v: %SystemSingle, 0\n    __OnSliderChanged_retjump:
+    %SystemUInt32, 0xFFFFFFFC\n    __SetTarget__SystemSingle_SystemDouble_p_0: %SystemSingle,
+    0\n    __SetTarget__SystemSingle_SystemDouble_p_1: %SystemDouble, 0\n    __SetTarget__SystemSingle_SystemDouble_d:
+    %SystemDouble, 0\n    __SetTarget__SystemSingle_SystemDouble_s: %SystemSingle,
+    0\n    __SetTarget__SystemSingle_SystemDouble_retjump: %SystemUInt32, 0xFFFFFFFC\n   
+    __OnDeserialization_retjump: %SystemUInt32, 0xFFFFFFFC\n    __Update___t0: %SystemBoolean,
+    null\n    __Update_retjump: %SystemUInt32, 0xFFFFFFFC\n    __Show_now: %SystemSingle,
+    0\n    __Show___t0: %SystemSingle, 0\n    __Show_s: %SystemString, null\n   
+    __Show___t1: %SystemString, null\n    __Show___t2: %UnityEngineUIText, null\n   
+    __Show_retjump: %SystemUInt32, 0xFFFFFFFC\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3:
+    %SystemDouble, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ramp:
+    %SystemDouble, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump:
+    %SystemUInt32, 0xFFFFFFFC\n    __returnValue: %SystemObject, null\n    __retaddr_end:
+    %SystemUInt32, 0xFFFFFFFC\n    __const_0: %SystemBoolean, null\n    __retaddr_0:
+    %SystemUInt32, 0x00000070\n    __SpeedAt__SystemDouble_intnl_0: %SystemDouble,
+    0\n    __retaddr_1: %SystemUInt32, 0x00000120\n    __SpeedAt__SystemDouble_intnl_1:
+    %SystemSingle, 0\n    __const_1: %SystemDouble, 0\n    __const_2: %SystemSingle,
+    0\n    __DistanceAt__SystemDouble_intnl_0: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_1:
+    %SystemSingle, 0\n    __const_3: %SystemSingle, 0.001\n    __DistanceAt__SystemDouble_intnl_2:
+    %SystemSingle, 0\n    __DistanceAt__SystemDouble_intnl_3: %SystemSingle, 0\n   
+    __DistanceAt__SystemDouble_intnl_4: %SystemSingle, 0\n    __DistanceAt__SystemDouble_intnl_5:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_6: %SystemBoolean, null\n   
+    __DistanceAt__SystemDouble_intnl_7: %SystemBoolean, null\n    __DistanceAt__SystemDouble_intnl_8:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_9: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble_intnl_10: %SystemBoolean, null\n    __DistanceAt__SystemDouble_intnl_11:
+    %SystemSingle, 0\n    __const_4: %SystemDouble, 0.5\n    __DistanceAt__SystemDouble_intnl_12:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_13: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble_intnl_14: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_15:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_16: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble_intnl_17: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_18:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_19: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble_intnl_20: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_21:
+    %SystemDouble, 0\n    __const_5: %UnityEngineObject, null\n    __OnSliderChanged_intnl_0:
+    %SystemBoolean, null\n    __OnSliderChanged_intnl_1: %SystemSingle, 0\n    __OnSliderChanged_intnl_2:
+    %SystemSingle, 0\n    __OnSliderChanged_intnl_3: %SystemSingle, 0\n    __const_6:
+    %SystemSingle, 0.01\n    __OnSliderChanged_intnl_4: %SystemBoolean, null\n   
+    __OnSliderChanged_intnl_5: %SystemDouble, 0\n    __retaddr_2: %SystemUInt32,
+    0x00000838\n    __const_7: %UnityEngineGameObject, this\n    __SetTarget__SystemSingle_SystemDouble_intnl_0:
+    %SystemBoolean, null\n    __SetTarget__SystemSingle_SystemDouble_intnl_1: %VRCSDKBaseVRCPlayerApi,
+    null\n    __retaddr_3: %SystemUInt32, 0x0000090C\n    __SetTarget__SystemSingle_SystemDouble_intnl_2:
+    %SystemDouble, 0\n    __retaddr_4: %SystemUInt32, 0x00000964\n    __SetTarget__SystemSingle_SystemDouble_intnl_3:
+    %SystemSingle, 0\n    __const_8: %VRCUdonUdonBehaviour, this\n    __retaddr_5:
+    %SystemUInt32, 0x00000A1C\n    __retaddr_6: %SystemUInt32, 0x00000A54\n    __const_9:
+    %SystemBoolean, null\n    __Update_intnl_0: %SystemBoolean, null\n    __Update_intnl_1:
+    %SystemDouble, 0\n    __retaddr_7: %SystemUInt32, 0x00000AFC\n    __Update_intnl_2:
+    %SystemSingle, 0\n    __Update_intnl_3: %SystemBoolean, null\n    __retaddr_8:
+    %SystemUInt32, 0x00000B70\n    __const_10: %SystemString, null\n    __const_11:
+    %UnityEngineUIText, null\n    __Show_intnl_0: %SystemDouble, 0\n    __retaddr_9:
+    %SystemUInt32, 0x00000C1C\n    __Show_intnl_1: %SystemSingle, 0\n    __Show_intnl_2:
+    %SystemBoolean, null\n    __const_12: %SystemSingle, -1\n    __Show_intnl_3:
+    %SystemBoolean, null\n    __Show_intnl_4: %SystemBoolean, null\n    __const_13:
+    %SystemString, \"Ship speed  \"\n    __const_14: %SystemString, \"F1\"\n    __Show_intnl_5:
+    %SystemString, null\n    __Show_intnl_6: %SystemString, null\n    __const_15:
+    %SystemString, \" m/s  (\"\n    __Show_intnl_7: %SystemString, null\n    __const_16:
+    %SystemSingle, 1.943844\n    __Show_intnl_8: %SystemSingle, 0\n    __const_17:
+    %SystemString, \"F0\"\n    __Show_intnl_9: %SystemString, null\n    __Show_intnl_10:
+    %SystemString, null\n    __const_18: %SystemString, \" kn)\"\n    __Show_intnl_11:
+    %SystemString, null\n    __Show_intnl_12: %SystemBoolean, null\n    __const_19:
+    %SystemString, \"  -> \"\n    __Show_intnl_13: %SystemString, null\n    __Show_intnl_14:
+    %SystemString, null\n    __Show_intnl_15: %SystemString, null\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_1:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_2:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_3:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_4:
+    %SystemDouble, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_5:
+    %SystemBoolean, null\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_6:
+    %SystemBoolean, null\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_7:
+    %SystemBoolean, null\n    __const_20: %SystemSingle, 1\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_8:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_9:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_10:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_11:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_12:
+    %SystemSingle, 0\n.data_end\n.code_start\n    .export _start\n    _start:\n       
+    PUSH, started\n        JUMP_IF_FALSE, __Start_L0\n        JUMP, __Start_L1\n   
+    __Start_L0:\n        PUSH, initialSpeed\n        PUSH, rampFrom\n        COPY\n       
+    PUSH, initialSpeed\n        PUSH, rampTo\n        COPY\n    __Start_L1:\n       
+    PUSH, __const_0\n        PUSH, started\n        COPY\n        PUSH, __retaddr_0\n       
+    PUSH, __Show_retjump\n        COPY\n        JUMP, Show\n        JUMP_INDIRECT,
+    __Start_retjump\n    .export SpeedAt__SystemDouble\n    SpeedAt__SystemDouble:\n       
+    PUSH, __retaddr_end\n        PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n       
+    JUMP, __SpeedAt__SystemDouble_body\n    __SpeedAt__SystemDouble_body:\n       
+    PUSH, __SpeedAt__SystemDouble_p_0\n        PUSH, rampStartTime\n        PUSH,
+    __SpeedAt__SystemDouble_intnl_0\n        EXTERN, \"SystemDouble.__op_Subtraction__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, rampFrom\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    COPY\n        PUSH, rampTo\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1\n       
+    COPY\n        PUSH, acceleration\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2\n       
+    COPY\n        PUSH, __SpeedAt__SystemDouble_intnl_0\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    COPY\n        PUSH, __retaddr_1\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n       
+    COPY\n        JUMP, SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    PUSH, __SpeedAt__SystemDouble_intnl_1\n        COPY\n        PUSH, __SpeedAt__SystemDouble_intnl_1\n       
+    PUSH, __SpeedAt__SystemDouble_ret\n        COPY\n        PUSH, __SpeedAt__SystemDouble_ret\n       
+    PUSH, __returnValue\n        COPY\n        JUMP_INDIRECT, __SpeedAt__SystemDouble_retjump\n       
+    JUMP_INDIRECT, __SpeedAt__SystemDouble_retjump\n    .export DistanceAt__SystemDouble\n   
+    DistanceAt__SystemDouble:\n        PUSH, __retaddr_end\n        PUSH, __DistanceAt__SystemDouble_retjump\n       
+    COPY\n        JUMP, __DistanceAt__SystemDouble_body\n    __DistanceAt__SystemDouble_body:\n       
+    PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl_t0\n        COPY\n       
+    PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl_t1\n        COPY\n       
+    PUSH, __const_2\n        PUSH, __DistanceAt__SystemDouble___inl0__from\n       
+    COPY\n        PUSH, __const_2\n        PUSH, __DistanceAt__SystemDouble___inl0__to\n       
+    COPY\n        PUSH, __const_2\n        PUSH, __DistanceAt__SystemDouble___inl0__accel\n       
+    COPY\n        PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl0__tau\n       
+    COPY\n        PUSH, __const_2\n        PUSH, __DistanceAt__SystemDouble___inl0__dv\n       
+    COPY\n        PUSH, __const_2\n        PUSH, __DistanceAt__SystemDouble___inl0__a\n       
+    COPY\n        PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl0__ramp\n       
+    COPY\n        PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    COPY\n        PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    COPY\n        PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl0__d\n       
+    COPY\n        PUSH, __const_2\n        PUSH, __DistanceAt__SystemDouble___inl0____t1\n       
+    COPY\n        PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl0____t2\n       
+    COPY\n        PUSH, rampStartDistance\n        PUSH, __DistanceAt__SystemDouble___inl_t0\n       
+    COPY\n        PUSH, rampFrom\n        PUSH, __DistanceAt__SystemDouble___inl0__from\n       
+    COPY\n        PUSH, rampTo\n        PUSH, __DistanceAt__SystemDouble___inl0__to\n       
+    COPY\n        PUSH, acceleration\n        PUSH, __DistanceAt__SystemDouble___inl0__accel\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble_p_0\n        PUSH, rampStartTime\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_0\n        EXTERN, \"SystemDouble.__op_Subtraction__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_0\n        PUSH, __DistanceAt__SystemDouble___inl0__tau\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble___inl0__to\n        PUSH, __DistanceAt__SystemDouble___inl0__from\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_1\n        EXTERN, \"SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_1\n        PUSH, __DistanceAt__SystemDouble___inl0__dv\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble___inl0__accel\n        PUSH, __const_3\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_2\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_2\n        PUSH, __DistanceAt__SystemDouble___inl0__a\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble___inl0__dv\n        PUSH, __DistanceAt__SystemDouble_intnl_3\n       
+    EXTERN, \"UnityEngineMathf.__Abs__SystemSingle__SystemSingle\"\n        PUSH,
+    __DistanceAt__SystemDouble_intnl_3\n        PUSH, __DistanceAt__SystemDouble___inl0__a\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_4\n        EXTERN, \"SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_4\n        PUSH, __DistanceAt__SystemDouble_intnl_5\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __DistanceAt__SystemDouble_intnl_5\n        PUSH, __DistanceAt__SystemDouble___inl0__ramp\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble___inl0__tau\n        PUSH, __DistanceAt__SystemDouble___inl0__ramp\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_6\n        EXTERN, \"SystemDouble.__op_LessThan__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_6\n        JUMP_IF_FALSE, __DistanceAt__SystemDouble_L0\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__tau\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    COPY\n        JUMP, __DistanceAt__SystemDouble_L1\n    __DistanceAt__SystemDouble_L0:\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__ramp\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    COPY\n    __DistanceAt__SystemDouble_L1:\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__r\n        COPY\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble_intnl_7\n        EXTERN,
+    \"SystemDouble.__op_LessThan__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_7\n        JUMP_IF_FALSE, __DistanceAt__SystemDouble_L3\n       
+    PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    COPY\n    __DistanceAt__SystemDouble_L3:\n        PUSH, __DistanceAt__SystemDouble___inl0__from\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_8\n        EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_8\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_9\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_9\n        PUSH, __DistanceAt__SystemDouble___inl0____t2\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble___inl0__dv\n        PUSH, __const_2\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_10\n        EXTERN, \"SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_10\n        JUMP_IF_FALSE, __DistanceAt__SystemDouble_L4\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__a\n        PUSH, __DistanceAt__SystemDouble___inl0____t1\n       
+    COPY\n        JUMP, __DistanceAt__SystemDouble_L5\n    __DistanceAt__SystemDouble_L4:\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__a\n        PUSH, __DistanceAt__SystemDouble_intnl_11\n       
+    EXTERN, \"SystemSingle.__op_UnaryMinus__SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_11\n        PUSH, __DistanceAt__SystemDouble___inl0____t1\n       
+    COPY\n    __DistanceAt__SystemDouble_L5:\n        PUSH, __DistanceAt__SystemDouble___inl0____t1\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_12\n        EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n       
+    PUSH, __const_4\n        PUSH, __DistanceAt__SystemDouble_intnl_12\n        PUSH,
+    __DistanceAt__SystemDouble_intnl_13\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_13\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_14\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_14\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_15\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t2\n        PUSH, __DistanceAt__SystemDouble_intnl_15\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_16\n        EXTERN, \"SystemDouble.__op_Addition__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_16\n        PUSH, __DistanceAt__SystemDouble___inl0__d\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble___inl0__to\n        PUSH, __DistanceAt__SystemDouble_intnl_17\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __DistanceAt__SystemDouble___inl0__tau\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_18\n        EXTERN, \"SystemDouble.__op_Subtraction__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_17\n        PUSH, __DistanceAt__SystemDouble_intnl_18\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_19\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__d\n        PUSH, __DistanceAt__SystemDouble_intnl_19\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_20\n        EXTERN, \"SystemDouble.__op_Addition__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_20\n        PUSH, __DistanceAt__SystemDouble___inl_t1\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble___inl_t0\n        PUSH, __DistanceAt__SystemDouble___inl_t1\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_21\n        EXTERN, \"SystemDouble.__op_Addition__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_21\n        PUSH, __DistanceAt__SystemDouble_ret\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble_ret\n        PUSH, __returnValue\n       
+    COPY\n        JUMP_INDIRECT, __DistanceAt__SystemDouble_retjump\n        JUMP_INDIRECT,
+    __DistanceAt__SystemDouble_retjump\n    .export OnSliderChanged\n    OnSliderChanged:\n       
+    PUSH, __const_2\n        PUSH, __OnSliderChanged_v\n        COPY\n        PUSH,
+    slider\n        PUSH, __const_5\n        PUSH, __OnSliderChanged_intnl_0\n       
+    EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\n       
+    PUSH, __OnSliderChanged_intnl_0\n        JUMP_IF_FALSE, __OnSliderChanged_L1\n       
+    JUMP_INDIRECT, __OnSliderChanged_retjump\n    __OnSliderChanged_L1:\n       
+    PUSH, slider\n        PUSH, __OnSliderChanged_intnl_1\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\n       
+    PUSH, __OnSliderChanged_intnl_1\n        PUSH, __OnSliderChanged_v\n        COPY\n       
+    PUSH, __OnSliderChanged_v\n        PUSH, rampTo\n        PUSH, __OnSliderChanged_intnl_2\n       
+    EXTERN, \"SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __OnSliderChanged_intnl_2\n        PUSH, __OnSliderChanged_intnl_3\n       
+    EXTERN, \"UnityEngineMathf.__Abs__SystemSingle__SystemSingle\"\n        PUSH,
+    __OnSliderChanged_intnl_3\n        PUSH, __const_6\n        PUSH, __OnSliderChanged_intnl_4\n       
+    EXTERN, \"SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __OnSliderChanged_intnl_4\n        JUMP_IF_FALSE, __OnSliderChanged_L3\n       
+    JUMP_INDIRECT, __OnSliderChanged_retjump\n    __OnSliderChanged_L3:\n       
+    PUSH, __OnSliderChanged_intnl_5\n        EXTERN, \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\n       
+    PUSH, __OnSliderChanged_v\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_0\n       
+    COPY\n        PUSH, __OnSliderChanged_intnl_5\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n       
+    COPY\n        PUSH, __retaddr_2\n        PUSH, __SetTarget__SystemSingle_SystemDouble_retjump\n       
+    COPY\n        JUMP, __SetTarget__SystemSingle_SystemDouble_body\n        JUMP_INDIRECT,
+    __OnSliderChanged_retjump\n    .export SetTarget__SystemSingle_SystemDouble\n   
+    SetTarget__SystemSingle_SystemDouble:\n        PUSH, __retaddr_end\n        PUSH,
+    __SetTarget__SystemSingle_SystemDouble_retjump\n        COPY\n        JUMP, __SetTarget__SystemSingle_SystemDouble_body\n   
+    __SetTarget__SystemSingle_SystemDouble_body:\n        PUSH, __const_1\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_d\n        COPY\n        PUSH, __const_2\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_s\n        COPY\n        PUSH, __const_7\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_0\n        EXTERN, \"VRCSDKBaseNetworking.__IsOwner__UnityEngineGameObject__SystemBoolean\"\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_0\n        JUMP_IF_FALSE,
+    __SetTarget__SystemSingle_SystemDouble_L0\n        JUMP, __SetTarget__SystemSingle_SystemDouble_L1\n   
+    __SetTarget__SystemSingle_SystemDouble_L0:\n        PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_1\n       
+    EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_1\n        PUSH, __const_7\n       
+    EXTERN, \"VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid\"\n   
+    __SetTarget__SystemSingle_SystemDouble_L1:\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n       
+    PUSH, __DistanceAt__SystemDouble_p_0\n        COPY\n        PUSH, __retaddr_3\n       
+    PUSH, __DistanceAt__SystemDouble_retjump\n        COPY\n        JUMP, __DistanceAt__SystemDouble_body\n       
+    PUSH, __DistanceAt__SystemDouble_ret\n        PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_2\n       
+    COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_2\n        PUSH,
+    __SetTarget__SystemSingle_SystemDouble_d\n        COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n       
+    PUSH, __SpeedAt__SystemDouble_p_0\n        COPY\n        PUSH, __retaddr_4\n       
+    PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n        JUMP, __SpeedAt__SystemDouble_body\n       
+    PUSH, __SpeedAt__SystemDouble_ret\n        PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_3\n       
+    COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_3\n        PUSH,
+    __SetTarget__SystemSingle_SystemDouble_s\n        COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n       
+    PUSH, rampStartTime\n        COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_d\n       
+    PUSH, rampStartDistance\n        COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_s\n       
+    PUSH, rampFrom\n        COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_0\n       
+    PUSH, rampTo\n        COPY\n        PUSH, __const_0\n        PUSH, started\n       
+    COPY\n        PUSH, __const_8\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\n       
+    PUSH, __retaddr_5\n        PUSH, __Show_retjump\n        COPY\n        JUMP,
+    Show\n        JUMP_INDIRECT, __SetTarget__SystemSingle_SystemDouble_retjump\n   
+    .export _onDeserialization\n    _onDeserialization:\n        PUSH, __const_0\n       
+    PUSH, started\n        COPY\n        PUSH, __retaddr_6\n        PUSH, __Show_retjump\n       
+    COPY\n        JUMP, Show\n        JUMP_INDIRECT, __OnDeserialization_retjump\n   
+    .export _update\n    _update:\n        PUSH, __const_9\n        PUSH, __Update___t0\n       
+    COPY\n        PUSH, shown\n        PUSH, rampTo\n        PUSH, __Update_intnl_0\n       
+    EXTERN, \"SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Update_intnl_0\n        PUSH, __Update___t0\n        COPY\n        PUSH,
+    __Update___t0\n        JUMP_IF_FALSE, __Update_L0\n        JUMP, __Update_L1\n   
+    __Update_L0:\n        PUSH, __Update_intnl_1\n        EXTERN, \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\n       
+    PUSH, __Update_intnl_1\n        PUSH, __SpeedAt__SystemDouble_p_0\n        COPY\n       
+    PUSH, __retaddr_7\n        PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n       
+    JUMP, __SpeedAt__SystemDouble_body\n        PUSH, __SpeedAt__SystemDouble_ret\n       
+    PUSH, __Update_intnl_2\n        COPY\n        PUSH, __Update_intnl_2\n       
+    PUSH, rampTo\n        PUSH, __Update_intnl_3\n        EXTERN, \"SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Update_intnl_3\n        PUSH, __Update___t0\n        COPY\n    __Update_L1:\n       
+    PUSH, __Update___t0\n        JUMP_IF_FALSE, __Update_L3\n        PUSH, __retaddr_8\n       
+    PUSH, __Show_retjump\n        COPY\n        JUMP, Show\n    __Update_L3:\n       
+    JUMP_INDIRECT, __Update_retjump\n    Show:\n        PUSH, __const_2\n       
+    PUSH, __Show_now\n        COPY\n        PUSH, __const_2\n        PUSH, __Show___t0\n       
+    COPY\n        PUSH, __const_10\n        PUSH, __Show_s\n        COPY\n       
+    PUSH, __const_10\n        PUSH, __Show___t1\n        COPY\n        PUSH, __const_11\n       
+    PUSH, __Show___t2\n        COPY\n        PUSH, __Show_intnl_0\n        EXTERN,
+    \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\n        PUSH,
+    __Show_intnl_0\n        PUSH, __SpeedAt__SystemDouble_p_0\n        COPY\n       
+    PUSH, __retaddr_9\n        PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n       
+    JUMP, __SpeedAt__SystemDouble_body\n        PUSH, __SpeedAt__SystemDouble_ret\n       
+    PUSH, __Show_intnl_1\n        COPY\n        PUSH, __Show_intnl_1\n        PUSH,
+    __Show_now\n        COPY\n        PUSH, __Show_now\n        PUSH, rampTo\n       
+    PUSH, __Show_intnl_2\n        EXTERN, \"SystemSingle.__op_Equality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Show_intnl_2\n        JUMP_IF_FALSE, __Show_L0\n        PUSH, rampTo\n       
+    PUSH, __Show___t0\n        COPY\n        JUMP, __Show_L1\n    __Show_L0:\n       
+    PUSH, __const_12\n        PUSH, __Show___t0\n        COPY\n    __Show_L1:\n       
+    PUSH, __Show___t0\n        PUSH, shown\n        COPY\n        PUSH, slider\n       
+    PUSH, __const_5\n        PUSH, __Show_intnl_3\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\n       
+    PUSH, __Show_intnl_3\n        JUMP_IF_FALSE, __Show_L3\n        PUSH, slider\n       
+    PUSH, rampTo\n        EXTERN, \"UnityEngineUISlider.__SetValueWithoutNotify__SystemSingle__SystemVoid\"\n   
+    __Show_L3:\n        PUSH, label\n        PUSH, __const_5\n        PUSH, __Show_intnl_4\n       
+    EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\n       
+    PUSH, __Show_intnl_4\n        JUMP_IF_FALSE, __Show_L5\n        JUMP_INDIRECT,
+    __Show_retjump\n    __Show_L5:\n        PUSH, __Show_now\n        PUSH, __const_14\n       
+    PUSH, __Show_intnl_5\n        EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\n       
+    PUSH, __const_13\n        PUSH, __Show_intnl_5\n        PUSH, __Show_intnl_6\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_intnl_6\n        PUSH, __const_15\n        PUSH, __Show_intnl_7\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_now\n        PUSH, __const_16\n        PUSH, __Show_intnl_8\n       
+    EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __Show_intnl_8\n        PUSH, __const_17\n        PUSH, __Show_intnl_9\n       
+    EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\n        PUSH,
+    __Show_intnl_7\n        PUSH, __Show_intnl_9\n        PUSH, __Show_intnl_10\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_intnl_10\n        PUSH, __const_18\n        PUSH, __Show_intnl_11\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_intnl_11\n        PUSH, __Show_s\n        COPY\n        PUSH, __Show_now\n       
+    PUSH, rampTo\n        PUSH, __Show_intnl_12\n        EXTERN, \"SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Show_intnl_12\n        JUMP_IF_FALSE, __Show_L7\n        PUSH, __Show_s\n       
+    PUSH, __Show___t1\n        COPY\n        PUSH, rampTo\n        PUSH, __const_14\n       
+    PUSH, __Show_intnl_13\n        EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\n       
+    PUSH, __const_19\n        PUSH, __Show_intnl_13\n        PUSH, __Show_intnl_14\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show___t1\n        PUSH, __Show_intnl_14\n        PUSH, __Show_intnl_15\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_intnl_15\n        PUSH, __Show_s\n        COPY\n    __Show_L7:\n       
+    PUSH, label\n        PUSH, __Show___t2\n        COPY\n        PUSH, __Show___t2\n       
+    PUSH, __Show_s\n        EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\n       
+    JUMP_INDIRECT, __Show_retjump\n    SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble:\n       
+    PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv\n       
+    COPY\n        PUSH, __const_1\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ramp\n       
+    COPY\n        PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    COPY\n        PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0\n       
+    EXTERN, \"SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_1\n       
+    EXTERN, \"UnityEngineMathf.__Abs__SystemSingle__SystemSingle\"\n        PUSH,
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2\n       
+    PUSH, __const_3\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_2\n       
+    EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_2\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_3\n       
+    EXTERN, \"SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_4\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_4\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ramp\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ramp\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_5\n       
+    EXTERN, \"SystemDouble.__op_GreaterThanOrEqual__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_5\n       
+    JUMP_IF_FALSE, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    COPY\n        JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n   
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L1:\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    PUSH, __const_1\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_6\n       
+    EXTERN, \"SystemDouble.__op_LessThanOrEqual__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_6\n       
+    JUMP_IF_FALSE, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    COPY\n        JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n   
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L3:\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv\n       
+    PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_7\n       
+    EXTERN, \"SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_7\n       
+    JUMP_IF_FALSE, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L4\n       
+    PUSH, __const_20\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    COPY\n        JUMP, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L5\n   
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L4:\n       
+    PUSH, __const_12\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    COPY\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L5:\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2\n       
+    PUSH, __const_3\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_8\n       
+    EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_8\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_9\n       
+    EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_10\n       
+    EXTERN, \"SystemConvert.__ToSingle__SystemDouble__SystemSingle\"\n        PUSH,
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_9\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_10\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_11\n       
+    EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_11\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_12\n       
+    EXTERN, \"SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_12\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    COPY\n        JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n       
+    JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n.code_end\n"
+  optAfterUasm: ".data_start\n    slider: %UnityEngineUISlider, null\n    .export
+    slider\n    label: %UnityEngineUIText, null\n    .export label\n    acceleration:
+    %SystemSingle, 0.3\n    .export acceleration\n    initialSpeed: %SystemSingle,
+    15\n    .export initialSpeed\n    rampStartTime: %SystemDouble, 0\n    .export
+    rampStartTime\n    .sync rampStartTime, none\n    rampStartDistance: %SystemDouble,
+    0\n    .export rampStartDistance\n    .sync rampStartDistance, none\n    rampFrom:
+    %SystemSingle, 0\n    .export rampFrom\n    .sync rampFrom, none\n    rampTo:
+    %SystemSingle, 0\n    .export rampTo\n    .sync rampTo, none\n    started: %SystemBoolean,
+    null\n    shown: %SystemSingle, -1\n    __refl_typeid: %SystemInt64, null\n   
+    __refl_typeids: %SystemInt64Array, null\n    __Start_retjump: %SystemUInt32,
+    0xFFFFFFFC\n    __SpeedAt__SystemDouble_p_0: %SystemDouble, 0\n    __SpeedAt__SystemDouble_ret:
+    %SystemSingle, 0\n    .export __SpeedAt__SystemDouble_ret\n    __SpeedAt__SystemDouble_retjump:
+    %SystemUInt32, 0xFFFFFFFC\n    __DistanceAt__SystemDouble_p_0: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble___inl_t0: %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl_t1:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl0__from: %SystemSingle,
+    0\n    __DistanceAt__SystemDouble___inl0__to: %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__accel:
+    %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__tau: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble___inl0__dv: %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__a:
+    %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0__ramp: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble___inl0__r: %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl0____t0:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble___inl0__d: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble___inl0____t1: %SystemSingle, 0\n    __DistanceAt__SystemDouble___inl0____t2:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_ret: %SystemDouble, 0\n    .export
+    __DistanceAt__SystemDouble_ret\n    __DistanceAt__SystemDouble_retjump: %SystemUInt32,
+    0xFFFFFFFC\n    __OnSliderChanged_v: %SystemSingle, 0\n    __OnSliderChanged_retjump:
+    %SystemUInt32, 0xFFFFFFFC\n    __SetTarget__SystemSingle_SystemDouble_p_0: %SystemSingle,
+    0\n    __SetTarget__SystemSingle_SystemDouble_p_1: %SystemDouble, 0\n    __SetTarget__SystemSingle_SystemDouble_d:
+    %SystemDouble, 0\n    __SetTarget__SystemSingle_SystemDouble_s: %SystemSingle,
+    0\n    __SetTarget__SystemSingle_SystemDouble_retjump: %SystemUInt32, 0xFFFFFFFC\n   
+    __OnDeserialization_retjump: %SystemUInt32, 0xFFFFFFFC\n    __Update___t0: %SystemBoolean,
+    null\n    __Update_retjump: %SystemUInt32, 0xFFFFFFFC\n    __Show_now: %SystemSingle,
+    0\n    __Show___t0: %SystemSingle, 0\n    __Show_s: %SystemString, null\n   
+    __Show___t1: %SystemString, null\n    __Show___t2: %UnityEngineUIText, null\n   
+    __Show_retjump: %SystemUInt32, 0xFFFFFFFC\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3:
+    %SystemDouble, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ramp:
+    %SystemDouble, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump:
+    %SystemUInt32, 0xFFFFFFFC\n    __returnValue: %SystemObject, null\n    __retaddr_end:
+    %SystemUInt32, 0xFFFFFFFC\n    __const_0: %SystemBoolean, null\n    __retaddr_0:
+    %SystemUInt32, 0x00000070\n    __SpeedAt__SystemDouble_intnl_0: %SystemDouble,
+    0\n    __retaddr_1: %SystemUInt32, 0x00000118\n    __SpeedAt__SystemDouble_intnl_1:
+    %SystemSingle, 0\n    __const_1: %SystemDouble, 0\n    __const_2: %SystemSingle,
+    0\n    __DistanceAt__SystemDouble_intnl_0: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_1:
+    %SystemSingle, 0\n    __const_3: %SystemSingle, 0.001\n    __DistanceAt__SystemDouble_intnl_2:
+    %SystemSingle, 0\n    __DistanceAt__SystemDouble_intnl_3: %SystemSingle, 0\n   
+    __DistanceAt__SystemDouble_intnl_4: %SystemSingle, 0\n    __DistanceAt__SystemDouble_intnl_5:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_6: %SystemBoolean, null\n   
+    __DistanceAt__SystemDouble_intnl_7: %SystemBoolean, null\n    __DistanceAt__SystemDouble_intnl_8:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_10: %SystemBoolean, null\n   
+    __const_4: %SystemDouble, 0.5\n    __DistanceAt__SystemDouble_intnl_12: %SystemDouble,
+    0\n    __DistanceAt__SystemDouble_intnl_13: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_14:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_15: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble_intnl_16: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_17:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_18: %SystemDouble, 0\n   
+    __DistanceAt__SystemDouble_intnl_19: %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_20:
+    %SystemDouble, 0\n    __DistanceAt__SystemDouble_intnl_21: %SystemDouble, 0\n   
+    __const_5: %UnityEngineObject, null\n    __OnSliderChanged_intnl_0: %SystemBoolean,
+    null\n    __OnSliderChanged_intnl_1: %SystemSingle, 0\n    __OnSliderChanged_intnl_2:
+    %SystemSingle, 0\n    __OnSliderChanged_intnl_3: %SystemSingle, 0\n    __const_6:
+    %SystemSingle, 0.01\n    __OnSliderChanged_intnl_4: %SystemBoolean, null\n   
+    __OnSliderChanged_intnl_5: %SystemDouble, 0\n    __retaddr_2: %SystemUInt32,
+    0x000006E8\n    __const_7: %UnityEngineGameObject, this\n    __SetTarget__SystemSingle_SystemDouble_intnl_0:
+    %SystemBoolean, null\n    __SetTarget__SystemSingle_SystemDouble_intnl_1: %VRCSDKBaseVRCPlayerApi,
+    null\n    __retaddr_3: %SystemUInt32, 0x000007A0\n    __SetTarget__SystemSingle_SystemDouble_intnl_2:
+    %SystemDouble, 0\n    __retaddr_4: %SystemUInt32, 0x000007E4\n    __SetTarget__SystemSingle_SystemDouble_intnl_3:
+    %SystemSingle, 0\n    __const_8: %VRCUdonUdonBehaviour, this\n    __retaddr_5:
+    %SystemUInt32, 0x00000874\n    __retaddr_6: %SystemUInt32, 0x000008AC\n    __const_9:
+    %SystemBoolean, null\n    __Update_intnl_0: %SystemBoolean, null\n    __retaddr_7:
+    %SystemUInt32, 0x0000092C\n    __Update_intnl_2: %SystemSingle, 0\n    __retaddr_8:
+    %SystemUInt32, 0x00000978\n    __const_10: %SystemString, null\n    __const_11:
+    %UnityEngineUIText, null\n    __retaddr_9: %SystemUInt32, 0x000009E8\n    __Show_intnl_1:
+    %SystemSingle, 0\n    __Show_intnl_2: %SystemBoolean, null\n    __const_12: %SystemSingle,
+    -1\n    __Show_intnl_3: %SystemBoolean, null\n    __Show_intnl_4: %SystemBoolean,
+    null\n    __const_13: %SystemString, \"Ship speed  \"\n    __const_14: %SystemString,
+    \"F1\"\n    __Show_intnl_5: %SystemString, null\n    __Show_intnl_6: %SystemString,
+    null\n    __const_15: %SystemString, \" m/s  (\"\n    __Show_intnl_7: %SystemString,
+    null\n    __const_16: %SystemSingle, 1.943844\n    __Show_intnl_8: %SystemSingle,
+    0\n    __const_17: %SystemString, \"F0\"\n    __Show_intnl_9: %SystemString,
+    null\n    __Show_intnl_10: %SystemString, null\n    __const_18: %SystemString,
+    \" kn)\"\n    __Show_intnl_12: %SystemBoolean, null\n    __const_19: %SystemString,
+    \"  -> \"\n    __Show_intnl_13: %SystemString, null\n    __Show_intnl_14: %SystemString,
+    null\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_1:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_2:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_3:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_4:
+    %SystemDouble, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_5:
+    %SystemBoolean, null\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_6:
+    %SystemBoolean, null\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_7:
+    %SystemBoolean, null\n    __const_20: %SystemSingle, 1\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_8:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_9:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_10:
+    %SystemSingle, 0\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_11:
+    %SystemSingle, 0\n.data_end\n.code_start\n    .export _start\n    _start:\n       
+    PUSH, started\n        JUMP_IF_FALSE, __Start_L0\n        JUMP, __Start_L1\n   
+    __Start_L0:\n        PUSH, initialSpeed\n        PUSH, rampFrom\n        COPY\n       
+    PUSH, initialSpeed\n        PUSH, rampTo\n        COPY\n    __Start_L1:\n       
+    PUSH, __const_0\n        PUSH, started\n        COPY\n        PUSH, __retaddr_0\n       
+    PUSH, __Show_retjump\n        COPY\n        JUMP, Show\n        JUMP_INDIRECT,
+    __Start_retjump\n    .export SpeedAt__SystemDouble\n    SpeedAt__SystemDouble:\n       
+    PUSH, __retaddr_end\n        PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n   
+    __SpeedAt__SystemDouble_body:\n        PUSH, __SpeedAt__SystemDouble_p_0\n       
+    PUSH, rampStartTime\n        PUSH, __SpeedAt__SystemDouble_intnl_0\n        EXTERN,
+    \"SystemDouble.__op_Subtraction__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, rampFrom\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    COPY\n        PUSH, rampTo\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1\n       
+    COPY\n        PUSH, acceleration\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2\n       
+    COPY\n        PUSH, __SpeedAt__SystemDouble_intnl_0\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    COPY\n        PUSH, __retaddr_1\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n       
+    COPY\n        JUMP, SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    PUSH, __SpeedAt__SystemDouble_ret\n        COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    PUSH, __returnValue\n        COPY\n        JUMP_INDIRECT, __SpeedAt__SystemDouble_retjump\n       
+    JUMP_INDIRECT, __SpeedAt__SystemDouble_retjump\n    .export DistanceAt__SystemDouble\n   
+    DistanceAt__SystemDouble:\n        PUSH, __retaddr_end\n        PUSH, __DistanceAt__SystemDouble_retjump\n       
+    COPY\n    __DistanceAt__SystemDouble_body:\n        PUSH, __const_1\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__r\n        COPY\n        PUSH, __const_1\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t0\n        COPY\n        PUSH, __const_2\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t1\n        COPY\n        PUSH, __const_1\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t2\n        COPY\n        PUSH, rampStartDistance\n       
+    PUSH, __DistanceAt__SystemDouble___inl_t0\n        COPY\n        PUSH, rampFrom\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__from\n        COPY\n        PUSH, rampTo\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__to\n        COPY\n        PUSH, __DistanceAt__SystemDouble_p_0\n       
+    PUSH, rampStartTime\n        PUSH, __DistanceAt__SystemDouble_intnl_0\n       
+    EXTERN, \"SystemDouble.__op_Subtraction__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_0\n        PUSH, __DistanceAt__SystemDouble___inl0__tau\n       
+    COPY\n        PUSH, rampTo\n        PUSH, rampFrom\n        PUSH, __DistanceAt__SystemDouble_intnl_1\n       
+    EXTERN, \"SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_1\n        PUSH, __DistanceAt__SystemDouble___inl0__dv\n       
+    COPY\n        PUSH, acceleration\n        PUSH, __const_3\n        PUSH, __DistanceAt__SystemDouble_intnl_2\n       
+    EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_2\n        PUSH, __DistanceAt__SystemDouble___inl0__a\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble_intnl_1\n        PUSH, __DistanceAt__SystemDouble_intnl_3\n       
+    EXTERN, \"UnityEngineMathf.__Abs__SystemSingle__SystemSingle\"\n        PUSH,
+    __DistanceAt__SystemDouble_intnl_3\n        PUSH, __DistanceAt__SystemDouble_intnl_2\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_4\n        EXTERN, \"SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_4\n        PUSH, __DistanceAt__SystemDouble_intnl_5\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __DistanceAt__SystemDouble_intnl_5\n        PUSH, __DistanceAt__SystemDouble___inl0__ramp\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble_intnl_0\n        PUSH, __DistanceAt__SystemDouble_intnl_5\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_6\n        EXTERN, \"SystemDouble.__op_LessThan__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_6\n        JUMP_IF_FALSE, __DistanceAt__SystemDouble_L0\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__tau\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    COPY\n        JUMP, __DistanceAt__SystemDouble_L1\n    __DistanceAt__SystemDouble_L0:\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__ramp\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    COPY\n    __DistanceAt__SystemDouble_L1:\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__r\n        COPY\n        PUSH, __DistanceAt__SystemDouble___inl0____t0\n       
+    PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble_intnl_7\n        EXTERN,
+    \"SystemDouble.__op_LessThan__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_7\n        JUMP_IF_FALSE, __DistanceAt__SystemDouble_L3\n       
+    PUSH, __const_1\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    COPY\n    __DistanceAt__SystemDouble_L3:\n        PUSH, __DistanceAt__SystemDouble___inl0__from\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_8\n        EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_8\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t2\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__dv\n        PUSH, __const_2\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_10\n        EXTERN, \"SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_10\n        JUMP_IF_FALSE, __DistanceAt__SystemDouble_L4\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__a\n        PUSH, __DistanceAt__SystemDouble___inl0____t1\n       
+    COPY\n        JUMP, __DistanceAt__SystemDouble_L5\n    __DistanceAt__SystemDouble_L4:\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__a\n        PUSH, __DistanceAt__SystemDouble___inl0____t1\n       
+    EXTERN, \"SystemSingle.__op_UnaryMinus__SystemSingle__SystemSingle\"\n    __DistanceAt__SystemDouble_L5:\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t1\n        PUSH, __DistanceAt__SystemDouble_intnl_12\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __const_4\n        PUSH, __DistanceAt__SystemDouble_intnl_12\n        PUSH, __DistanceAt__SystemDouble_intnl_13\n       
+    EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_13\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_14\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_14\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_15\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl0____t2\n        PUSH, __DistanceAt__SystemDouble_intnl_15\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_16\n        EXTERN, \"SystemDouble.__op_Addition__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl0__to\n        PUSH, __DistanceAt__SystemDouble_intnl_17\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __DistanceAt__SystemDouble___inl0__tau\n        PUSH, __DistanceAt__SystemDouble___inl0__r\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_18\n        EXTERN, \"SystemDouble.__op_Subtraction__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_17\n        PUSH, __DistanceAt__SystemDouble_intnl_18\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_19\n        EXTERN, \"SystemDouble.__op_Multiplication__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_16\n        PUSH, __DistanceAt__SystemDouble_intnl_19\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_20\n        EXTERN, \"SystemDouble.__op_Addition__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble___inl_t0\n        PUSH, __DistanceAt__SystemDouble_intnl_20\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_21\n        EXTERN, \"SystemDouble.__op_Addition__SystemDouble_SystemDouble__SystemDouble\"\n       
+    PUSH, __DistanceAt__SystemDouble_intnl_21\n        PUSH, __DistanceAt__SystemDouble_ret\n       
+    COPY\n        PUSH, __DistanceAt__SystemDouble_intnl_21\n        PUSH, __returnValue\n       
+    COPY\n        JUMP_INDIRECT, __DistanceAt__SystemDouble_retjump\n        JUMP_INDIRECT,
+    __DistanceAt__SystemDouble_retjump\n    .export OnSliderChanged\n    OnSliderChanged:\n       
+    PUSH, __const_2\n        PUSH, __OnSliderChanged_v\n        COPY\n        PUSH,
+    slider\n        PUSH, __const_5\n        PUSH, __OnSliderChanged_intnl_0\n       
+    EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\n       
+    PUSH, __OnSliderChanged_intnl_0\n        JUMP_IF_FALSE, __OnSliderChanged_L1\n       
+    JUMP_INDIRECT, __OnSliderChanged_retjump\n    __OnSliderChanged_L1:\n       
+    PUSH, slider\n        PUSH, __OnSliderChanged_intnl_1\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\n       
+    PUSH, __OnSliderChanged_intnl_1\n        PUSH, __OnSliderChanged_v\n        COPY\n       
+    PUSH, __OnSliderChanged_intnl_1\n        PUSH, rampTo\n        PUSH, __OnSliderChanged_intnl_2\n       
+    EXTERN, \"SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __OnSliderChanged_intnl_2\n        PUSH, __OnSliderChanged_intnl_3\n       
+    EXTERN, \"UnityEngineMathf.__Abs__SystemSingle__SystemSingle\"\n        PUSH,
+    __OnSliderChanged_intnl_3\n        PUSH, __const_6\n        PUSH, __OnSliderChanged_intnl_4\n       
+    EXTERN, \"SystemSingle.__op_LessThan__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __OnSliderChanged_intnl_4\n        JUMP_IF_FALSE, __OnSliderChanged_L3\n       
+    JUMP_INDIRECT, __OnSliderChanged_retjump\n    __OnSliderChanged_L3:\n       
+    PUSH, __OnSliderChanged_intnl_5\n        EXTERN, \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\n       
+    PUSH, __OnSliderChanged_v\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_0\n       
+    COPY\n        PUSH, __OnSliderChanged_intnl_5\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n       
+    COPY\n        PUSH, __retaddr_2\n        PUSH, __SetTarget__SystemSingle_SystemDouble_retjump\n       
+    COPY\n        JUMP, __SetTarget__SystemSingle_SystemDouble_body\n        JUMP_INDIRECT,
+    __OnSliderChanged_retjump\n    .export SetTarget__SystemSingle_SystemDouble\n   
+    SetTarget__SystemSingle_SystemDouble:\n        PUSH, __retaddr_end\n        PUSH,
+    __SetTarget__SystemSingle_SystemDouble_retjump\n        COPY\n    __SetTarget__SystemSingle_SystemDouble_body:\n       
+    PUSH, __const_1\n        PUSH, __SetTarget__SystemSingle_SystemDouble_d\n       
+    COPY\n        PUSH, __const_7\n        PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_0\n       
+    EXTERN, \"VRCSDKBaseNetworking.__IsOwner__UnityEngineGameObject__SystemBoolean\"\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_0\n        JUMP_IF_FALSE,
+    __SetTarget__SystemSingle_SystemDouble_L0\n        JUMP, __SetTarget__SystemSingle_SystemDouble_L1\n   
+    __SetTarget__SystemSingle_SystemDouble_L0:\n        PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_1\n       
+    EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_intnl_1\n        PUSH, __const_7\n       
+    EXTERN, \"VRCSDKBaseNetworking.__SetOwner__VRCSDKBaseVRCPlayerApi_UnityEngineGameObject__SystemVoid\"\n   
+    __SetTarget__SystemSingle_SystemDouble_L1:\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n       
+    PUSH, __DistanceAt__SystemDouble_p_0\n        COPY\n        PUSH, __retaddr_3\n       
+    PUSH, __DistanceAt__SystemDouble_retjump\n        COPY\n        JUMP, __DistanceAt__SystemDouble_body\n       
+    PUSH, __DistanceAt__SystemDouble_ret\n        PUSH, __SetTarget__SystemSingle_SystemDouble_d\n       
+    COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n        PUSH,
+    __SpeedAt__SystemDouble_p_0\n        COPY\n        PUSH, __retaddr_4\n       
+    PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n        JUMP, __SpeedAt__SystemDouble_body\n       
+    PUSH, __SetTarget__SystemSingle_SystemDouble_p_1\n        PUSH, rampStartTime\n       
+    COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_d\n        PUSH, rampStartDistance\n       
+    COPY\n        PUSH, __SpeedAt__SystemDouble_ret\n        PUSH, rampFrom\n       
+    COPY\n        PUSH, __SetTarget__SystemSingle_SystemDouble_p_0\n        PUSH,
+    rampTo\n        COPY\n        PUSH, __const_0\n        PUSH, started\n       
+    COPY\n        PUSH, __const_8\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__RequestSerialization__SystemVoid\"\n       
+    PUSH, __retaddr_5\n        PUSH, __Show_retjump\n        COPY\n        JUMP,
+    Show\n        JUMP_INDIRECT, __SetTarget__SystemSingle_SystemDouble_retjump\n   
+    .export _onDeserialization\n    _onDeserialization:\n        PUSH, __const_0\n       
+    PUSH, started\n        COPY\n        PUSH, __retaddr_6\n        PUSH, __Show_retjump\n       
+    COPY\n        JUMP, Show\n        JUMP_INDIRECT, __OnDeserialization_retjump\n   
+    .export _update\n    _update:\n        PUSH, shown\n        PUSH, rampTo\n       
+    PUSH, __Update_intnl_0\n        EXTERN, \"SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Update_intnl_0\n        PUSH, __Update___t0\n        COPY\n        PUSH,
+    __Update_intnl_0\n        JUMP_IF_FALSE, __Update_L0\n        JUMP, __Update_L1\n   
+    __Update_L0:\n        PUSH, __SpeedAt__SystemDouble_p_0\n        EXTERN, \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\n       
+    PUSH, __retaddr_7\n        PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n       
+    JUMP, __SpeedAt__SystemDouble_body\n        PUSH, __SpeedAt__SystemDouble_ret\n       
+    PUSH, rampTo\n        PUSH, __Update___t0\n        EXTERN, \"SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean\"\n   
+    __Update_L1:\n        PUSH, __Update___t0\n        JUMP_IF_FALSE, __Update_L3\n       
+    PUSH, __retaddr_8\n        PUSH, __Show_retjump\n        COPY\n        JUMP,
+    Show\n    __Update_L3:\n        JUMP_INDIRECT, __Update_retjump\n    Show:\n       
+    PUSH, __const_2\n        PUSH, __Show_now\n        COPY\n        PUSH, __const_2\n       
+    PUSH, __Show___t0\n        COPY\n        PUSH, __const_10\n        PUSH, __Show_s\n       
+    COPY\n        PUSH, __SpeedAt__SystemDouble_p_0\n        EXTERN, \"VRCSDKBaseNetworking.__GetServerTimeInSeconds__SystemDouble\"\n       
+    PUSH, __retaddr_9\n        PUSH, __SpeedAt__SystemDouble_retjump\n        COPY\n       
+    JUMP, __SpeedAt__SystemDouble_body\n        PUSH, __SpeedAt__SystemDouble_ret\n       
+    PUSH, __Show_now\n        COPY\n        PUSH, __SpeedAt__SystemDouble_ret\n       
+    PUSH, rampTo\n        PUSH, __Show_intnl_2\n        EXTERN, \"SystemSingle.__op_Equality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Show_intnl_2\n        JUMP_IF_FALSE, __Show_L0\n        PUSH, rampTo\n       
+    PUSH, __Show___t0\n        COPY\n        JUMP, __Show_L1\n    __Show_L0:\n       
+    PUSH, __const_12\n        PUSH, __Show___t0\n        COPY\n    __Show_L1:\n       
+    PUSH, __Show___t0\n        PUSH, shown\n        COPY\n        PUSH, slider\n       
+    PUSH, __const_5\n        PUSH, __Show_intnl_3\n        EXTERN, \"UnityEngineObject.__op_Inequality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\n       
+    PUSH, __Show_intnl_3\n        JUMP_IF_FALSE, __Show_L3\n        PUSH, slider\n       
+    PUSH, rampTo\n        EXTERN, \"UnityEngineUISlider.__SetValueWithoutNotify__SystemSingle__SystemVoid\"\n   
+    __Show_L3:\n        PUSH, label\n        PUSH, __const_5\n        PUSH, __Show_intnl_4\n       
+    EXTERN, \"UnityEngineObject.__op_Equality__UnityEngineObject_UnityEngineObject__SystemBoolean\"\n       
+    PUSH, __Show_intnl_4\n        JUMP_IF_FALSE, __Show_L5\n        JUMP_INDIRECT,
+    __Show_retjump\n    __Show_L5:\n        PUSH, __Show_now\n        PUSH, __const_14\n       
+    PUSH, __Show_intnl_5\n        EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\n       
+    PUSH, __const_13\n        PUSH, __Show_intnl_5\n        PUSH, __Show_intnl_6\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_intnl_6\n        PUSH, __const_15\n        PUSH, __Show_intnl_7\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_now\n        PUSH, __const_16\n        PUSH, __Show_intnl_8\n       
+    EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __Show_intnl_8\n        PUSH, __const_17\n        PUSH, __Show_intnl_9\n       
+    EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\n        PUSH,
+    __Show_intnl_7\n        PUSH, __Show_intnl_9\n        PUSH, __Show_intnl_10\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_intnl_10\n        PUSH, __const_18\n        PUSH, __Show_s\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_now\n        PUSH, rampTo\n        PUSH, __Show_intnl_12\n       
+    EXTERN, \"SystemSingle.__op_Inequality__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __Show_intnl_12\n        JUMP_IF_FALSE, __Show_L7\n        PUSH, rampTo\n       
+    PUSH, __const_14\n        PUSH, __Show_intnl_13\n        EXTERN, \"SystemSingle.__ToString__SystemString__SystemString\"\n       
+    PUSH, __const_19\n        PUSH, __Show_intnl_13\n        PUSH, __Show_intnl_14\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n       
+    PUSH, __Show_s\n        PUSH, __Show_intnl_14\n        PUSH, __Show_s\n       
+    EXTERN, \"SystemString.__op_Addition__SystemString_SystemString__SystemString\"\n   
+    __Show_L7:\n        PUSH, label\n        PUSH, __Show_s\n        EXTERN, \"UnityEngineUIText.__set_text__SystemString__SystemVoid\"\n       
+    JUMP_INDIRECT, __Show_retjump\n    SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble:\n       
+    PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    COPY\n        PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0\n       
+    EXTERN, \"SystemSingle.__op_Subtraction__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_1\n       
+    EXTERN, \"UnityEngineMathf.__Abs__SystemSingle__SystemSingle\"\n        PUSH,
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2\n       
+    PUSH, __const_3\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_2\n       
+    EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_2\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_3\n       
+    EXTERN, \"SystemSingle.__op_Division__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_4\n       
+    EXTERN, \"SystemConvert.__ToDouble__SystemSingle__SystemDouble\"\n        PUSH,
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_4\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_5\n       
+    EXTERN, \"SystemDouble.__op_GreaterThanOrEqual__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_5\n       
+    JUMP_IF_FALSE, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    COPY\n        JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n   
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L1:\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    PUSH, __const_1\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_6\n       
+    EXTERN, \"SystemDouble.__op_LessThanOrEqual__SystemDouble_SystemDouble__SystemBoolean\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_6\n       
+    JUMP_IF_FALSE, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    COPY\n        JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n   
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L3:\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1\n       
+    COPY\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_dv\n       
+    PUSH, __const_2\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_7\n       
+    EXTERN, \"SystemSingle.__op_GreaterThan__SystemSingle_SystemSingle__SystemBoolean\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_7\n       
+    JUMP_IF_FALSE, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L4\n       
+    PUSH, __const_20\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    COPY\n        JUMP, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L5\n   
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L4:\n       
+    PUSH, __const_12\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    COPY\n    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_L5:\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_2\n       
+    PUSH, __const_3\n        PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_8\n       
+    EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t0\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_8\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_9\n       
+    EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_p_3\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_10\n       
+    EXTERN, \"SystemConvert.__ToSingle__SystemDouble__SystemSingle\"\n        PUSH,
+    __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_9\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_10\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_11\n       
+    EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble___t1\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_intnl_11\n       
+    PUSH, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_ret\n       
+    EXTERN, \"SystemSingle.__op_Addition__SystemSingle_SystemSingle__SystemSingle\"\n       
+    JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n       
+    JUMP_INDIRECT, __SpeedOnRamp__SystemSingle_SystemSingle_SystemSingle_SystemDouble_retjump\n.code_end\n"
+  optBeforeInject:
+  - "=__refl_typeid\tPrimConst\t=SystemInt64\t0\tInt64:=-7927978719246200429\t\t\t\t"
+  - "=__refl_typeids\tArrayConst\t=SystemInt64Array\t1\t\t\t\t\t=Int64:=-7927978719246200429"
+  - "=__const_0\tBoolTrue\t\t0\t\t\t\t\t"
+  optAfterInject:
+  - "=__refl_typeid\tPrimConst\t=SystemInt64\t0\tInt64:=-7927978719246200429\t\t\t\t"
+  - "=__refl_typeids\tArrayConst\t=SystemInt64Array\t1\t\t\t\t\t=Int64:=-7927978719246200429"
+  - "=__const_0\tBoolTrue\t\t0\t\t\t\t\t"
+  optExternBefore: 66
+  optExternAfter: 66
+  optInsnBefore: 626
+  optInsnAfter: 515
+  optBytesBefore: 4584
+  optBytesAfter: 3840

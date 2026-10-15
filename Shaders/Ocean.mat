@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ocean
+  m_Shader: {fileID: 4800000, guid: 0b507a5e543942fc836315200d72de9d, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DispTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DispTex0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DispTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DispTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DispTex3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamSim:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamSimFar:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormTex0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormTex3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BubbleScatter: 0.01
+    - _Chlorophyll: 0.2
+    - _DispScale: 1
+    - _FoamCell: 1.2
+    - _FoamStreaks: 0.3
+    - _FogSky: 1
+    - _GlintCell: 0.15
+    - _GlintCone: 0.08
+    - _GlintIntensity: 3
+    - _GlintSlope: 0.08
+    - _GlintSpeed: 3
+    - _HazeHeight: 1000
+    - _HorizonFog: 1
+    - _HorizonTilt: 1
+    - _MeshScale: 1
+    - _NormalStrength: 1
+    - _Roughness: 0.4
+    - _SSSStrength: 1
+    - _SkirtDistance: 45000
+    - _SlickDamping: 0.6
+    - _SpecMax: 2
+    - _SunSheen: 0.35
+    - _TileLength: 88
+    - _WhitecapCell: 12
+    - _WhitecapDensity: 0.01
+    m_Colors:
+    - _Cascade0: {r: 2003, g: 1, b: 0.22, a: 0}
+    - _Cascade1: {r: 433, g: 1, b: 1, a: 0}
+    - _Cascade2: {r: 97, g: 1, b: 1, a: 0}
+    - _Cascade3: {r: 23.3, g: 1, b: 1, a: 0}
+    - _FoamColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - _FoamSimArea: {r: -10, g: -2.4201205, b: 512, a: 1}
+    - _FoamSimFarArea: {r: -8, g: 3.079882, b: 4096, a: 1}
+    - _Ship: {r: 8.404863, g: 263.0339, b: 0, a: 1}
+    - _ShipSize: {r: 479, g: 56, b: 15, a: 15}
+    - _Wake: {r: 1, g: 1.5, b: 1, a: 1}
+    - _WakeTrail: {r: 4, g: 0.7, b: 6, a: 60}
+    - _WaterColor: {r: 0.09999997, g: 0.14999998, b: 0.17999998, a: 1}
+    - _WindDown: {r: 0, g: -1, b: 0, a: 0}
+  m_BuildTextureStacks: []
