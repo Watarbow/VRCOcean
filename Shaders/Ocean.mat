@@ -75,6 +75,7 @@ Material:
     m_Floats:
     - _BubbleScatter: 0.01
     - _Chlorophyll: 0.2
+    - _CloudShadowStrength: 1
     - _DispScale: 1
     - _FoamCell: 1.2
     - _FoamStreaks: 0.3

@@ -42,6 +42,8 @@ Shader "VRCOcean/Ocean"
         _WindDown ("Downwind (runtime: x, z)", Vector) = (0, -1, 0, 0)
         _SlickDamping ("Slick Smoothing (capillary damping)", Range(0, 1)) = 0.6
         _BubbleScatter ("Bubble Backscatter (1/m per unit)", Float) = 0.01
+        [Header(Cloud Shadows (from VRCClouds CloudShadows, if present))]
+        _CloudShadowStrength ("Cloud Shadow Strength", Range(0, 1)) = 1
         [Header(Ship Wake (runtime from OceanFFT cascade 0))]
         _Ship ("Ship (bow x, z, forward x, z)", Vector) = (0, 0, 0, 1)
         _ShipSize ("Ship (length, beam, speed, draft)", Vector) = (0, 0, 0, 0)
@@ -89,6 +91,23 @@ Shader "VRCOcean/Ocean"
             float _Roughness, _NormalStrength, _DispScale, _MeshScale, _SkirtDistance;
             float _GlintIntensity, _GlintCell, _GlintSlope, _GlintCone, _GlintSpeed, _SunSheen, _SpecMax;
             float _HorizonTilt, _HorizonFog, _FogSky, _HazeHeight;
+            // Cloud shadow map published by VRCClouds' CloudShadows (globals; unset = no clouds).
+            // Area: centre x, z, size (0 = no map), sea level y. R = sun transmittance at sea level.
+            sampler2D _UdonCloudShadowMap;
+            float4 _UdonCloudShadowArea;
+            float _CloudShadowStrength;
+
+            float CloudShadow(float3 p, float3 L)
+            {
+                if (_UdonCloudShadowArea.z <= 0.0) return 1.0;
+                // Follow the sun ray down to the map's sea level.
+                float2 xz = p.xz - L.xz / max(L.y, 0.05) * (p.y - _UdonCloudShadowArea.w);
+                float2 uv = (xz - _UdonCloudShadowArea.xy) / _UdonCloudShadowArea.z + 0.5;
+                float2 e = abs(uv - 0.5) * 2.0;
+                float edge = smoothstep(0.8, 1.0, max(e.x, e.y));   // fade out before the map ends
+                float t = lerp(tex2Dlod(_UdonCloudShadowMap, float4(uv, 0, 0)).r, 1.0, edge);
+                return lerp(1.0, t, _CloudShadowStrength);
+            }
 
             struct appdata
             {
@@ -555,6 +574,8 @@ Shader "VRCOcean/Ocean"
 
                 // Sun
                 float3 L = normalize(_WorldSpaceLightPos0.xyz);
+                // Sunlight through the clouds above this point.
+                float3 sunCol = _LightColor0.rgb * CloudShadow(i.worldPos, L);
                 float3 H = normalize(L + V);
                 float nl = max(dot(N, L), 2e-5);
                 float lightMask = SmithMask(nv, rough);
@@ -589,11 +610,11 @@ Shader "VRCOcean/Ocean"
                 float3 sss = (sssHeight + sssNear) / (1.0 + lightMask) * _SSSStrength * 0.12 * exp(-4.0 * absorb);
 
                 // Water-leaving radiance = Rrs * downwelling irradiance (sun on a level surface + sky).
-                float3 Ed = _LightColor0.rgb * saturate(L.y) + UNITY_PI * ShadeSH9(float4(0, 1, 0, 1));
-                float3 water = (DeepWaterRrs(absorb, bb) * Ed + sss * _LightColor0.rgb) * (1.0 - F) / 0.98;
-                float3 foamCol = _FoamColor.rgb * lerp(0.85, 1.15, fresh) * (_LightColor0.rgb * nl + ShadeSH9(float4(N, 1.0)));
+                float3 Ed = sunCol * saturate(L.y) + UNITY_PI * ShadeSH9(float4(0, 1, 0, 1));
+                float3 water = (DeepWaterRrs(absorb, bb) * Ed + sss * sunCol) * (1.0 - F) / 0.98;
+                float3 foamCol = _FoamColor.rgb * lerp(0.85, 1.15, fresh) * (sunCol * nl + ShadeSH9(float4(N, 1.0)));
 
-                float3 col = lerp(water, foamCol, foam) + (refl * F + spec * _LightColor0.rgb) * (1.0 - foam);
+                float3 col = lerp(water, foamCol, foam) + (refl * F + spec * sunCol) * (1.0 - foam);
                 #if defined(FOG_LINEAR) || defined(FOG_EXP) || defined(FOG_EXP2)
                 // The skirt runs out to 45 km, but on the curved earth the sea ends at the horizon
                 // (sqrt(2 R h): ~5 km from 2 m). Past that the plane would fog to a white band the

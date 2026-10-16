@@ -276,6 +276,8 @@ VRCOcean/
 | `_HorizonFog` | 1 | フォグ距離を地平線までで打ち切る（0 で無効） |
 | `_FogSky` | 1 | フォグ色をスカイボックスの地平線色から取る（0 でシーンのフォグ色） |
 | `_HazeHeight` | 1000 | もやのスケールハイト（m）。上空からはフォグが薄くなる（0 で無効） |
+| **Cloud Shadows** | | |
+| `_CloudShadowStrength` | 1 | 雲の影の強さ（0 で影なし）。影は [VRCClouds](https://github.com/Watarbow/VRCClouds) の `CloudShadows` がシーンにあるときだけ落ちる |
 | **Foam** | | |
 | `_FoamCell` | 1.2 | 泡のレース模様のセル（m） |
 | `_FoamStreaks` | 0.3 | スリック上に残る泡（筋）の量 |
@@ -283,6 +285,8 @@ VRCOcean/
 | `_WhitecapDensity` | 0.01 | 遠方で砕けているセルの割合（0 でなし） |
 | `_SlickDamping` | 0.6 | スリックが細かい波を消す強さ |
 | `_BubbleScatter` | 0.01 | 水中の気泡による後方散乱（1/m） |
+
+雲の影は VRCClouds の `CloudShadows` が公開するグローバル `_UdonCloudShadowMap`（海面高度での日射の透過率）と `_UdonCloudShadowArea`（中心 x・z、一辺 m、海面高度）を読むだけで、VRCClouds が無くても海面シェーダはそのまま動く（影なし）。雲は船と一緒に動かない（船速ぶん後ろへ流れない）。
 
 `_Cascade*`、`_DispTex*`、`_NormTex*`、`_FoamSim*`、`_WindDown`、`_Ship*`、`_Wake*`、`_Escort*`、`_MeshScale`、`_SkirtDistance` などは実行時に `OceanFFT` が設定する。手で変えても上書きされる。
 
