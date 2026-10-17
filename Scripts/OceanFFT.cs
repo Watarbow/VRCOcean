@@ -96,6 +96,8 @@ public partial class OceanFFT : TsukimiBehaviour
     public float altitudePerScale = 60f;
     public float maxMeshScale = 64f;
     public float skirtDistance = 45000f;
+    // Underwater.shader (cascade 0): finds the surface above the camera from the same waves.
+    public Material underwaterMaterial;
 
     private const int N = 256;
     private const int Stages = 8;      // log2(N)
@@ -134,6 +136,7 @@ public partial class OceanFFT : TsukimiBehaviour
     private Vector2 farFlow;
     private string[] cascadeNames;
     private string[] flowNames;
+    private string[] dispNames;
     private string[] escortNames;
     private string[] escortWakeNames;
     private Vector3 appliedWind = new Vector3(1e9f, 0f, 0f);
@@ -175,6 +178,7 @@ public partial class OceanFFT : TsukimiBehaviour
         local = Networking.LocalPlayer;
         cascadeNames = new string[] { "_Cascade0", "_Cascade1", "_Cascade2", "_Cascade3" };
         flowNames = new string[] { "_Flow0", "_Flow1", "_Flow2", "_Flow3" };
+        dispNames = new string[] { "_DispTex0", "_DispTex1", "_DispTex2", "_DispTex3" };
         escortNames = new string[] { "_Escort0", "_Escort1", "_Escort2" };
         escortWakeNames = new string[] { "_EscortWake0", "_EscortWake1", "_EscortWake2" };
         Regenerate();
@@ -422,6 +426,18 @@ public partial class OceanFFT : TsukimiBehaviour
             Vector4 f = new Vector4(Wrap(aft.x * dist / tile), Wrap(aft.y * dist / tile), 0f, 0f);
             oceanMaterial.SetVector(flowNames[i], f);
             if (foamSimMaterial != null) foamSimMaterial.SetVector(flowNames[i], f);
+            if (underwaterMaterial != null)
+            {
+                underwaterMaterial.SetVector(flowNames[i], f);
+                underwaterMaterial.SetVector(cascadeNames[i], oceanMaterial.GetVector(cascadeNames[i]));
+                underwaterMaterial.SetTexture(dispNames[i], oceanMaterial.GetTexture(dispNames[i]));
+            }
+        }
+        if (underwaterMaterial != null)
+        {
+            underwaterMaterial.SetFloat("_DispScale", oceanMaterial.GetFloat("_DispScale"));
+            underwaterMaterial.SetFloat("_Chlorophyll", oceanMaterial.GetFloat("_Chlorophyll"));
+            underwaterMaterial.SetFloat("_UnderwaterExposure", oceanMaterial.GetFloat("_UnderwaterExposure"));
         }
         // Foam lace: its hash repeats every 4096 cells of the coarse octave.
         // ponytail: the finer octaves don't repeat there, so they jump once per wrap (~5.5 min at 15 m/s).

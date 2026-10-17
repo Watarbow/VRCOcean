@@ -1,6 +1,8 @@
 // FFT ocean surface. Lighting follows GodotOceanWaves' water.gdshader (Atlas GDC 2019 BSDF, GGX),
 // with Schlick fresnel (F0 = 0.02) on the reflection probe / skybox.
 // Up to 4 cascades; _DispTexN / _NormTexN / _CascadeN are set at runtime by OceanFFT (cascadeIndex N).
+// Two-sided: from under the water the back faces show the surface from below (Underside), and mark
+// the stencil so Underwater.shader leaves them alone (they fade along their own sight line).
 Shader "VRCOcean/Ocean"
 {
     Properties
@@ -8,6 +10,8 @@ Shader "VRCOcean/Ocean"
         // Water colour comes from inherent optical properties (pure water + chlorophyll), not a colour pick.
         _Chlorophyll ("Chlorophyll (mg/m^3; 0.05 deep blue, 1 green coastal)", Range(0.01, 10)) = 0.2
         _SSSStrength ("Wave Crest Scattering", Range(0, 4)) = 1
+        // The eye adapts to the dim light under the water; this stands in for it (1 = none).
+        _UnderwaterExposure ("Underwater Exposure", Range(1, 32)) = 6
         _FoamColor ("Foam Color", Color) = (0.8, 0.8, 0.8, 1)
         _Roughness ("Roughness", Range(0.01, 1)) = 0.4
         _NormalStrength ("Normal Strength", Range(0, 1)) = 1
@@ -62,10 +66,14 @@ Shader "VRCOcean/Ocean"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" "Queue"="Geometry" }
+        // Last of the opaques: a hull drawn over a stencil-marked back face would keep the mark and
+        // miss Underwater.shader's fog.
+        Tags { "RenderType"="Opaque" "Queue"="Geometry+499" }
         Pass
         {
             Tags { "LightMode"="ForwardBase" }
+            Cull Off
+            Stencil { Ref 128 WriteMask 128 PassFront Keep PassBack Replace }
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -83,7 +91,7 @@ Shader "VRCOcean/Ocean"
             #include "Ships.cginc"
             float4 _WakeTrail;
             float4 _FoamColor;
-            float _Chlorophyll, _SSSStrength, _FoamCell;
+            float _Chlorophyll, _SSSStrength, _FoamCell, _UnderwaterExposure;
             sampler2D _FoamSim, _FoamSimFar;
             float4 _FoamSimArea, _FoamSimFarArea;
             float _FoamStreaks, _SlickDamping, _BubbleScatter, _WhitecapCell, _WhitecapDensity;
@@ -96,6 +104,7 @@ Shader "VRCOcean/Ocean"
             sampler2D _UdonCloudShadowMap;
             float4 _UdonCloudShadowArea;
             float _CloudShadowStrength;
+            #include "Underwater.cginc"
 
             float CloudShadow(float3 p, float3 L)
             {
@@ -471,17 +480,6 @@ Shader "VRCOcean/Ocean"
                 return t * t * dotMask * _GlintIntensity / (UNITY_PI * cone * cone) * step(0.0, dot(n, L));
             }
 
-            // Absorption a and backscatter bb (1/m) at R/G/B = 650/550/450 nm.
-            // Pure water: Pope & Fry 1997, Smith & Baker 1981 (bb = b/2). Phytoplankton + CDOM:
-            // Prieur & Sathyendranath 1981 (a_ph(440) = 0.06 C^0.65). Particle backscatter: Morel 1988.
-            void WaterIOP(out float3 a, out float3 bb)
-            {
-                float C = max(_Chlorophyll, 0.01);
-                a = float3(0.34, 0.0565, 0.0092) + 0.06 * pow(C, 0.65) * float3(0.36, 0.14, 1.12);
-                float bbp = (0.002 + 0.01 * (0.5 - 0.25 * log10(C))) * 0.3 * pow(C, 0.62);
-                bb = float3(0.0004, 0.00095, 0.00245) + bbp * float3(0.85, 1.0, 1.22);
-            }
-
             // Remote-sensing reflectance of optically deep water, Lw / Ed (1/sr). Gordon et al. 1988 /
             // Lee et al. 2002: below-surface rrs from u = bb / (a + bb), then across the interface.
             float3 DeepWaterRrs(float3 a, float3 bb)
@@ -491,7 +489,40 @@ Shader "VRCOcean/Ocean"
                 return 0.52 * rrs / (1.0 - 1.7 * rrs);
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            // The surface from below: the sky refracted through Snell's window (48.6 deg half-angle),
+            // the deep water mirrored outside it (total internal reflection), and foam lit from above,
+            // all fading into the water's own colour along the sight line to the camera.
+            float3 Underside(float3 wp, float3 N, float3 V, float rough, float foam, float depth)
+            {
+                float3 a, bb, b;
+                WaterIOP(a, bb, b);
+                float3 t = exp(-(a + b) * length(_WorldSpaceCameraPos - wp));
+                // Faded out: leave the pixel unmarked for Underwater.shader's fog, which gives the
+                // same haze. Marked, the skybox (drawn inside the skirt's far rim) would show through.
+                if (all(t * _UnderwaterExposure < 0.001)) discard;
+                float3 L = normalize(_WorldSpaceLightPos0.xyz);
+                float3 sky = UNITY_PI * ShadeSH9(float4(0, 1, 0, 1));
+                float3 Ed = _LightColor0.rgb * CloudShadow(wp, L) * saturate(L.y) + sky;
+                float3 deep = Ed * UnderwaterRadiance(a, bb, 0.0);
+                // The haze around the camera: as Underwater.shader, so the two meet without a seam.
+                // ponytail: cloud shadows don't dim it; pass the map to Underwater.shader if that shows.
+                float3 haze = (_LightColor0.rgb * saturate(L.y) + sky) * UnderwaterRadiance(a, bb, depth);
+                float3 T = refract(-V, -N, 1.333);
+                float3 col = deep;
+                UNITY_BRANCH if (dot(T, T) > 0.0)
+                {
+                    // Schlick on the air side's angle reaches 1 right at the window's rim.
+                    float F = 0.02 + 0.98 * pow(1.0 - saturate(dot(T, N)), 5.0);
+                    float3 above = DecodeHDR(UNITY_SAMPLE_TEXCUBE_LOD(unity_SpecCube0, T, rough * UNITY_SPECCUBE_LOD_STEPS), unity_SpecCube0_HDR);
+                    // Radiance gains n^2 = 1.78 going into the denser water.
+                    col = lerp(1.78 * above, deep, F);
+                }
+                // Foam passes on about half the light, diffused.
+                col = lerp(col, _FoamColor.rgb * Ed * (0.5 / UNITY_PI), foam);
+                return (col * t + haze * (1.0 - t)) * _UnderwaterExposure;
+            }
+
+            fixed4 frag (v2f i, bool front : SV_IsFrontFace) : SV_Target
             {
                 float3 V = normalize(_WorldSpaceCameraPos - i.worldPos);
                 float dist = length(i.worldPos.xz - _WorldSpaceCameraPos.xz);
@@ -556,6 +587,13 @@ Shader "VRCOcean/Ocean"
                 float3 N = normalize(float3(-grad.x, 1.0, -grad.y));
                 // Reflections blur with the slopes filtering removed (alpha^2 = 2 var).
                 float rough = saturate(sqrt(_Roughness * _Roughness * damp * damp + 2.0 * slopeVar));
+                UNITY_BRANCH if (!front)
+                {
+                    float depth = CameraDepth(unity_ObjectToWorld._m13);
+                    // From above, back faces are only folded-over crests: leave them out, as culling did.
+                    if (depth <= 0.0) discard;
+                    return fixed4(Underside(i.worldPos, N, V, rough, foam, depth), 1.0);
+                }
 
                 float nv = max(dot(N, V), 2e-5);
                 // At grazing angles the eye only sees the facets tilted toward it (the rest are masked),
@@ -599,8 +637,8 @@ Shader "VRCOcean/Ocean"
 
                 // Fake subsurface scattering (Atlas): brighter on the back side of tall waves.
                 // Light through the thin crest: a few metres of water absorb the red.
-                float3 absorb, bb;
-                WaterIOP(absorb, bb);
+                float3 absorb, bb, scatter;
+                WaterIOP(absorb, bb, scatter);
                 // Bubbles under the foam are large, spectrally flat scatterers: the water turns turquoise.
                 // In open water only under the caps (and in the trail), not as 8 m turquoise blotches.
                 // The propeller wash is far denser in bubbles than a whitecap: x4 in the ship's trail.

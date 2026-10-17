@@ -97,6 +97,7 @@ Material:
     - _SpecMax: 2
     - _SunSheen: 0.35
     - _TileLength: 88
+    - _UnderwaterExposure: 6
     - _WhitecapCell: 12
     - _WhitecapDensity: 0.01
     m_Colors:

@@ -32,6 +32,8 @@ VRCOcean/
 │   ├── Ocean.shader/.mat     海面の描画
 │   ├── FoamSim.shader/.mat   泡の持続シミュレーションと、しぶきの粒子更新
 │   ├── Spray.shader/.mat     しぶきの描画
+│   ├── Underwater.shader/.mat 水中の霞（カメラが海面より下にあるときだけ描く）
+│   ├── Underwater.cginc      水の光学特性と水中の光（Ocean.shader と共用）
 │   └── Ships.cginc           船（主艦＋随伴艦）の共通定義
 ├── Meshes/
 │   ├── clipmap_high.obj      海面メッシュ（クリップマップ）
@@ -48,6 +50,7 @@ VRCOcean/
 |---|---|
 | `Ocean` | `clipmap_high` メッシュ（`Ocean.mat`）と、`OceanFFT` が 4 つ（カスケード 0〜3） |
 | `Ocean/Spray` | しぶきのメッシュ（`Spray.mat`） |
+| `Ocean/Underwater` | 水中の霞（`Underwater.mat`）。キューブは描画範囲（bounds）のためだけにあり、シェーダーがカメラの周りに置き直す |
 
 プレハブのカスケード設定：
 
@@ -209,6 +212,7 @@ VRCOcean/
 | `altitudePerScale` | 60 | m | 海面からの高さがこの値 × 現在の倍率を超えるたびにメッシュを 2 倍にする |
 | `maxMeshScale` | 64 | 倍 | メッシュ拡大の上限 |
 | `skirtDistance` | 45000 | m | 外周を引き伸ばす距離。カメラの Far Clip より小さくする |
+| `underwaterMaterial` | Underwater.mat | — | 水中の霞のマテリアル（カスケード 0 のみ）。波・`_Chlorophyll`・`_DispScale`・`_UnderwaterExposure` を `oceanMaterial` から毎フレーム写す。空にすると水中の霞は出ない |
 
 `snapSize` 以下はカスケード 0 のみ使用。
 
@@ -259,6 +263,7 @@ VRCOcean/
 |---|---|---|
 | `_Chlorophyll` | 0.2 | クロロフィル濃度（mg/m³）。海の色は純水＋クロロフィルの光学特性から計算する。0.05 で深い青、1 で緑がかった沿岸 |
 | `_SSSStrength` | 1 | 波頭を透過する光（サブサーフェス散乱）の強さ |
+| `_UnderwaterExposure` | 6 | 水中の明るさの倍率。暗い水中に目が慣れるぶんの代わり（1 で物理的な明るさのまま） |
 | `_FoamColor` | (0.8, 0.8, 0.8) | 泡の色 |
 | `_Roughness` | 0.4 | 面の粗さ |
 | `_NormalStrength` | 1 | 法線の強さ |
@@ -329,6 +334,8 @@ VRCOcean/
 - **船は 1 隊のみ。** 主艦＋随伴艦 3 隻が同じ針路・速度で進む前提。個別に動く船は表現できない
 - **主艦は静止させる。** `ship` を実際に動かすと、海の流れと二重になる
 - **GPU 負荷。** 毎フレーム、カスケードごとに 256² の FFT（約 20 パス）、加えて泡シミュレーション（1024² と 512²）を回す。重い場合は `foamSimResolution` / `foamFarResolution` を下げる
+- **水中の表現には深度テクスチャが要る。** VRChat ではシャドウ付きのリアルタイム Directional Light をシーンに置く。水中から見上げた海面はスネルの窓（半角 48.6°）と全反射で描き、それ以外は視線の長さに応じて水の色に霞ませる
+- **ステンシルのビット 128 を使う。** 水中から見上げた海面に印を付け、`Underwater.shader`（と VRCClouds の Cloud Volume）がそこを避ける。同じビットを書くシェーダーが重なると、その部分だけ霞がかからない
 - **`OceanFFT_*.shader` / `.mat` は自動生成。** T# が `[Kernel]` メソッドから生成するので、直接編集しない
 
 ---
@@ -343,6 +350,7 @@ VRCOcean/
 | 引き波が出ない | カスケード 0 の `ship` が設定されているか。船速が 0 でないか |
 | 引き波の位置がずれる | `shipBow` が艦首の水線（船のローカル軸、m）を指しているか。船のスケールは無視される |
 | しぶきが出ない | `sprayMaterial` と `foamSimMaterial` の両方が設定されているか |
+| 水中で霞がかからない / 真っ黒 | シャドウ付きの Directional Light があるか（深度テクスチャ）。カスケード 0 の `underwaterMaterial` が設定されているか。暗いときは `_UnderwaterExposure` を上げる |
 | 上空から海が途切れる | カメラの Far Clip が `skirtDistance` より大きいか |
 | 航空機の速度計がおかしい | `airVehicles` に入れた機体が SaccAirVehicle か。他のスクリプトが `Wind` を書き換えていないか |
 | 遠くで波の模様が繰り返して見える | カスケード同士の `tileLength` を割り切れない値にする。`seed` を変える |
